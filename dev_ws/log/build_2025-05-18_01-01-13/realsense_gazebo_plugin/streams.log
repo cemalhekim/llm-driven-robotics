@@ -1,0 +1,54 @@
+[0.113s] Invoking command in '/home/ch/Workspace/llm-driven-robotics/dev_ws/build/realsense_gazebo_plugin': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/ch/Workspace/llm-driven-robotics/dev_ws/src/xarm_ros2/thirdparty/realsense_gazebo_plugin -DCMAKE_INSTALL_PREFIX=/home/ch/Workspace/llm-driven-robotics/dev_ws/install/realsense_gazebo_plugin
+[0.146s] -- The C compiler identification is GNU 13.3.0
+[0.182s] -- The CXX compiler identification is GNU 13.3.0
+[0.194s] -- Detecting C compiler ABI info
+[0.252s] -- Detecting C compiler ABI info - done
+[0.261s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.261s] -- Detecting C compile features
+[0.261s] -- Detecting C compile features - done
+[0.268s] -- Detecting CXX compiler ABI info
+[0.335s] -- Detecting CXX compiler ABI info - done
+[0.341s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.341s] -- Detecting CXX compile features
+[0.341s] -- Detecting CXX compile features - done
+[0.342s] -- Found ament_cmake: 2.5.4 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.440s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.494s] -- Found rclcpp: 28.1.9 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.518s] -- Found rosidl_generator_c: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.532s] -- Found rosidl_generator_cpp: 4.6.5 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.548s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.568s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.651s] -- Found rmw_implementation_cmake: 7.3.2 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.654s] -- Found rmw_fastrtps_cpp: 8.4.2 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.725s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[0.744s] -- Found FastRTPS: /opt/ros/foxy/include (Required is at least version "2.13") 
+[0.768s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.852s] -- Found ament_lint_auto: 0.17.2 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[0.915s] -- Configuring done (0.8s)
+[0.919s] -- Generating done (0.0s)
+[0.921s] -- Build files have been written to: /home/ch/Workspace/llm-driven-robotics/dev_ws/build/realsense_gazebo_plugin
+[0.932s] Invoked command in '/home/ch/Workspace/llm-driven-robotics/dev_ws/build/realsense_gazebo_plugin' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/ch/Workspace/llm-driven-robotics/dev_ws/src/xarm_ros2/thirdparty/realsense_gazebo_plugin -DCMAKE_INSTALL_PREFIX=/home/ch/Workspace/llm-driven-robotics/dev_ws/install/realsense_gazebo_plugin
+[0.933s] Invoking command in '/home/ch/Workspace/llm-driven-robotics/dev_ws/build/realsense_gazebo_plugin': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ch/Workspace/llm-driven-robotics/dev_ws/build/realsense_gazebo_plugin -- -j32 -l32
+[0.963s] Invoked command in '/home/ch/Workspace/llm-driven-robotics/dev_ws/build/realsense_gazebo_plugin' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ch/Workspace/llm-driven-robotics/dev_ws/build/realsense_gazebo_plugin -- -j32 -l32
+[0.964s] Invoking command in '/home/ch/Workspace/llm-driven-robotics/dev_ws/build/realsense_gazebo_plugin': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/ch/Workspace/llm-driven-robotics/dev_ws/build/realsense_gazebo_plugin
+[0.968s] -- Install configuration: ""
+[0.968s] -- Installing: /home/ch/Workspace/llm-driven-robotics/dev_ws/install/realsense_gazebo_plugin/share/realsense_gazebo_plugin/environment/library_path.sh
+[0.969s] -- Installing: /home/ch/Workspace/llm-driven-robotics/dev_ws/install/realsense_gazebo_plugin/share/realsense_gazebo_plugin/environment/library_path.dsv
+[0.969s] -- Installing: /home/ch/Workspace/llm-driven-robotics/dev_ws/install/realsense_gazebo_plugin/share/ament_index/resource_index/package_run_dependencies/realsense_gazebo_plugin
+[0.969s] -- Installing: /home/ch/Workspace/llm-driven-robotics/dev_ws/install/realsense_gazebo_plugin/share/ament_index/resource_index/parent_prefix_path/realsense_gazebo_plugin
+[0.969s] -- Installing: /home/ch/Workspace/llm-driven-robotics/dev_ws/install/realsense_gazebo_plugin/share/realsense_gazebo_plugin/environment/ament_prefix_path.sh
+[0.969s] -- Installing: /home/ch/Workspace/llm-driven-robotics/dev_ws/install/realsense_gazebo_plugin/share/realsense_gazebo_plugin/environment/ament_prefix_path.dsv
+[0.969s] -- Installing: /home/ch/Workspace/llm-driven-robotics/dev_ws/install/realsense_gazebo_plugin/share/realsense_gazebo_plugin/environment/path.sh
+[0.969s] -- Installing: /home/ch/Workspace/llm-driven-robotics/dev_ws/install/realsense_gazebo_plugin/share/realsense_gazebo_plugin/environment/path.dsv
+[0.969s] -- Installing: /home/ch/Workspace/llm-driven-robotics/dev_ws/install/realsense_gazebo_plugin/share/realsense_gazebo_plugin/local_setup.bash
+[0.969s] -- Installing: /home/ch/Workspace/llm-driven-robotics/dev_ws/install/realsense_gazebo_plugin/share/realsense_gazebo_plugin/local_setup.sh
+[0.969s] -- Installing: /home/ch/Workspace/llm-driven-robotics/dev_ws/install/realsense_gazebo_plugin/share/realsense_gazebo_plugin/local_setup.zsh
+[0.969s] -- Installing: /home/ch/Workspace/llm-driven-robotics/dev_ws/install/realsense_gazebo_plugin/share/realsense_gazebo_plugin/local_setup.dsv
+[0.969s] -- Installing: /home/ch/Workspace/llm-driven-robotics/dev_ws/install/realsense_gazebo_plugin/share/realsense_gazebo_plugin/package.dsv
+[0.969s] -- Installing: /home/ch/Workspace/llm-driven-robotics/dev_ws/install/realsense_gazebo_plugin/share/ament_index/resource_index/packages/realsense_gazebo_plugin
+[0.969s] -- Installing: /home/ch/Workspace/llm-driven-robotics/dev_ws/install/realsense_gazebo_plugin/share/realsense_gazebo_plugin/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.970s] -- Installing: /home/ch/Workspace/llm-driven-robotics/dev_ws/install/realsense_gazebo_plugin/share/realsense_gazebo_plugin/cmake/ament_cmake_export_libraries-extras.cmake
+[0.970s] -- Installing: /home/ch/Workspace/llm-driven-robotics/dev_ws/install/realsense_gazebo_plugin/share/realsense_gazebo_plugin/cmake/realsense_gazebo_pluginConfig.cmake
+[0.970s] -- Installing: /home/ch/Workspace/llm-driven-robotics/dev_ws/install/realsense_gazebo_plugin/share/realsense_gazebo_plugin/cmake/realsense_gazebo_pluginConfig-version.cmake
+[0.970s] -- Installing: /home/ch/Workspace/llm-driven-robotics/dev_ws/install/realsense_gazebo_plugin/share/realsense_gazebo_plugin/package.xml
+[0.971s] Invoked command in '/home/ch/Workspace/llm-driven-robotics/dev_ws/build/realsense_gazebo_plugin' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/ch/Workspace/llm-driven-robotics/dev_ws/build/realsense_gazebo_plugin

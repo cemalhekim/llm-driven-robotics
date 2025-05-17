@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "xarm_msgs__py",
+		"source" : "/home/ch/Workspace/llm-driven-robotics/dev_ws/build/xarm_msgs/xarm_msgs__py"
+	}
+}

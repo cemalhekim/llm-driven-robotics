@@ -1,4 +1,4 @@
-src/xarm_ros2/
-build/
-install/
-log/
+dev_ws/build/
+dev_ws/install/
+dev_ws/log/
+dev_ws/src/xarm_ros2

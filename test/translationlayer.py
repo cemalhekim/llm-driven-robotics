@@ -1,18 +1,14 @@
-from robotmotionsimulation import RobotMotionSimulation
+from robotmotiontest import RobotMotionTest
 
 class TranslationLayer:
     def __init__(self):
-        self.robot = RobotMotionSimulation()
+        self.arm = RobotMotionTest.connect()
+        RobotMotionTest.go_home(self.arm)
 
     def execute(self, llm_output: str):
-        """
-        Map LLM output (0 or 1) to robot actions.
-        """
-        llm_output = llm_output.strip()
-
         if llm_output == "1":
-            self.robot.move_forward()
+            RobotMotionTest.move_forward(self.arm, dx=50)
         elif llm_output == "0":
-            self.robot.move_backward()
+            RobotMotionTest.move_backward(self.arm, dx=50)
         else:
-            print(f"⚠️ Unknown LLM output: {llm_output}")
+            print(f"⚠ Unknown LLM output: {llm_output}")

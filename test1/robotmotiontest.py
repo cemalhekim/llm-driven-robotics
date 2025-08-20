@@ -1,3 +1,4 @@
+#robotmotiontest.py
 from xarm.wrapper import XArmAPI
 import time
 

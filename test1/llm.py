@@ -1,4 +1,4 @@
-# binary_cmd.py
+# llm.py
 import requests
 
 MODEL = "llama3.2"

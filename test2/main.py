@@ -1,11 +1,13 @@
-# main.py
-from llm import LLMRobotAgent
+from llm import ask_and_call
+from robotmotiontest import RobotMotionTest
 
 if __name__ == "__main__":
-    agent = LLMRobotAgent()
-    print("Agent ready. Type 'exit' to quit.")
+    arm = RobotMotionTest.connect()
+    RobotMotionTest.go_home(arm)
+
     while True:
         text = input("You: ")
-        if text.lower() in {"exit", "quit", "q"}:
+        if text.lower() in {"quit", "exit"}:
             break
-        agent.execute_text(text)
+        decision = ask_and_call(text, arm)  # agent does the call internally
+        print(f"[LLM decision] {decision}")

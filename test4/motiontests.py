@@ -1,11 +1,14 @@
 # motiontests.py
-from tools import connect_to_robot, go_home, go_offsethome, pick_sample_from_bed, place_sample_to_bed
+from tools import go_home
+from tools import pick_sample_from_bed
+from tools import place_sample_to_bed   
+from tools import place_sample_to_userarea
+from tools import pick_sample_from_userarea
 from robotmotion import uFactory_xArm
 
-connect_to_robot()
-uFactory_xArm.move_to(uFactory_xArm.sample2)
 
-
+uFactory_xArm.connect()
+place_sample_to_bed(1)
 '''
 if __name__ == "__main__":
     arm = uFactory_xArm.connect()

@@ -1,7 +1,10 @@
-from llm import ask_and_dispatch
+#main_highlevel.py
+from llm_highlevel import ask_and_dispatch
 from robotmotion import uFactory_xArm
 from tools import go_home
+from results_store import start_run
 if __name__ == "__main__":
+    start_run("highlevel")
     uFactory_xArm.connect()
     uFactory_xArm.move_to(uFactory_xArm.offsethome)
     go_home()

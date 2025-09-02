@@ -20,6 +20,8 @@ class uFactory_xArm:
     sample5above = [608.5, 58, 185, -180, 0, 0, 300]
     sample5 = [608.5, 58, 80, 180, 0, 0, 200]
     userarea = [-792, -229, 162, 90, 0, -90, 300]
+    measurementstation = [540, -397, 59, -90, 0, -90, 200]
+
     #-------------------
 
     @staticmethod

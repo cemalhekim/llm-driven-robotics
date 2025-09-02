@@ -1,3 +1,0 @@
-{"ts": "2025-09-02T14:45:22Z", "run_id": "20250902-164446-ab27ae", "kind": "ocp", "value": 0.3942109297911832, "sample": 1, "sample_id": 1, "meta": {"pose": "measurementstation"}}
-{"ts": "2025-09-02T14:46:10Z", "run_id": "20250902-164446-ab27ae", "kind": "ca", "value": 0.24158852205257753, "sample": 1, "sample_id": 1, "meta": {"pose": "measurementstation"}}
-{"ts": "2025-09-02T14:47:02Z", "run_id": "20250902-164446-ab27ae", "kind": "ca", "value": 0.7147748156262124, "sample": 2, "sample_id": 2, "meta": {"pose": "measurementstation"}}

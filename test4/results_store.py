@@ -5,9 +5,13 @@ from pathlib import Path
 
 STAMP = datetime.now().strftime("%Y%m%d%H%M%S")  # local date+time
 
-DB_PATH    = os.getenv("LAB_DB",    f"{STAMP}.db")
-JSONL_PATH = os.getenv("LAB_JSONL", f"{STAMP}.jsonl")
+BASE_DIR = Path(os.getenv("LAB_DIR", "experiment_logs")).resolve()
+DB_DIR   = BASE_DIR / "experiment_logs_db"
+DB_DIR.mkdir(parents=True, exist_ok=True)
+BASE_DIR.mkdir(parents=True, exist_ok=True)
 
+DB_PATH    = os.getenv("LAB_DB",    str(DB_DIR  / f"{STAMP}.db"))
+JSONL_PATH = os.getenv("LAB_JSONL", str(BASE_DIR / f"{STAMP}.jsonl"))
 
 _lock = threading.Lock()
 _current_run = None

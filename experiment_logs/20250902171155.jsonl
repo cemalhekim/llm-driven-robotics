@@ -1,0 +1,5 @@
+{"ts": "2025-09-02T15:12:43Z", "run_id": "20250902171155", "measurement": "ocp", "value": 0.6264187534240575, "sample": 1, "sample_id": 1, "meta": {"pose": "measurementstation"}}
+{"ts": "2025-09-02T15:13:35Z", "run_id": "20250902171155", "measurement": "ocp", "value": 0.33605256549301177, "sample": 1, "sample_id": 1, "meta": {"pose": "measurementstation"}}
+{"ts": "2025-09-02T15:14:00Z", "run_id": "20250902171155", "measurement": "ocp", "value": 0.41784889954329585, "sample": 2, "sample_id": 2, "meta": {"pose": "measurementstation"}}
+{"ts": "2025-09-02T15:14:54Z", "run_id": "20250902171155", "measurement": "cv", "value": 0.0012508021832360328, "sample": 4, "sample_id": 4, "meta": {"pose": "measurementstation"}}
+{"ts": "2025-09-02T15:15:19Z", "run_id": "20250902171155", "measurement": "ocp", "value": 0.3699406486005876, "sample": 2, "sample_id": 2, "meta": {"pose": "measurementstation"}}

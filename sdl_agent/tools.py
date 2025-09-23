@@ -54,7 +54,7 @@ def cv_measurement(i: int) -> Observation:
     return obs
 
 def bring_sample_to_user(i: int) -> Observation:
-    obs = start_obs(step="handover", tool="bring_sample_to_user", args={"i": i})
+    obs = start_obs(step="interraction", tool="bring_sample_to_user", args={"i": i})
     try:
         uFactory_xArm.pick_sample_from_bed(i)
         uFactory_xArm.place_sample_to_userarea()
@@ -66,7 +66,7 @@ def bring_sample_to_user(i: int) -> Observation:
     return obs
 
 def collect_sample_from_user(i: int) -> Observation:
-    obs = start_obs(step="handover", tool="collect_sample_from_user", args={"i": i})
+    obs = start_obs(step="interraction", tool="collect_sample_from_user", args={"i": i})
     try:
         uFactory_xArm.pick_sample_from_userarea()
         uFactory_xArm.place_sample_to_bed(i)
@@ -78,7 +78,7 @@ def collect_sample_from_user(i: int) -> Observation:
     return obs
 
 def go_home() -> Observation:
-    obs = start_obs(step="navigation", tool="go_home", args={})
+    obs = start_obs(step="home", tool="go_home", args={})
     try:
         uFactory_xArm.move_to(uFactory_xArm.home)
         obs = finish_ok(obs, extra_meta={"pose": "home"})

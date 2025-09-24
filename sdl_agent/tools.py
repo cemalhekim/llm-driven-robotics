@@ -10,11 +10,11 @@ def ocp_measurement(i: int) -> Observation:
     try:
         uFactory_xArm.pick_sample_from_bed(i)
         uFactory_xArm.place_sample_to_measurementstation()
+        f = "OCP"
         v = instruments.ocp_measurement_step()
-        log_measurement("ocp", i, v, meta={"pose": "measurementstation"})
         uFactory_xArm.pick_sample_from_measurementstation()
         uFactory_xArm.place_sample_to_bed(i)
-        obs = finish_ok(obs, value=v, extra_meta={"pose": "measurementstation"})
+        obs = finish_ok(obs, feature=f, sample=i, value=v, extra_meta={"pose": "measurementstation"})
     except Exception as e:
         obs = finish_err(obs, e)
     finally:
@@ -26,11 +26,11 @@ def ca_measurement(i: int) -> Observation:
     try:
         uFactory_xArm.pick_sample_from_bed(i)
         uFactory_xArm.place_sample_to_measurementstation()
+        f="CA"
         v = instruments.ca_measurement_step()
-        log_measurement("ca", i, v, meta={"pose": "measurementstation"})
         uFactory_xArm.pick_sample_from_measurementstation()
         uFactory_xArm.place_sample_to_bed(i)
-        obs = finish_ok(obs, value=v, extra_meta={"pose": "measurementstation"})
+        obs = finish_ok(obs,feature=f, sample=i, value=v, extra_meta={"pose": "measurementstation"})
     except Exception as e:
         obs = finish_err(obs, e)
     finally:
@@ -42,11 +42,11 @@ def cv_measurement(i: int) -> Observation:
     try:
         uFactory_xArm.pick_sample_from_bed(i)
         uFactory_xArm.place_sample_to_measurementstation()
+        f="CV"
         v = instruments.cv_measurement_step()
-        log_measurement("cv", i, v, meta={"pose": "measurementstation"})
         uFactory_xArm.pick_sample_from_measurementstation()
         uFactory_xArm.place_sample_to_bed(i)
-        obs = finish_ok(obs, value=v, extra_meta={"pose": "measurementstation"})
+        obs = finish_ok(obs, feature=f, sample=i, value=v, extra_meta={"pose": "measurementstation"})
     except Exception as e:
         obs = finish_err(obs, e)
     finally:
@@ -58,7 +58,7 @@ def bring_sample_to_user(i: int) -> Observation:
     try:
         uFactory_xArm.pick_sample_from_bed(i)
         uFactory_xArm.place_sample_to_userarea()
-        obs = finish_ok(obs, extra_meta={"target": "userarea"})
+        obs = finish_ok(obs, sample=i, extra_meta={"target": "userarea"})
     except Exception as e:
         obs = finish_err(obs, e)
     finally:
@@ -70,7 +70,7 @@ def collect_sample_from_user(i: int) -> Observation:
     try:
         uFactory_xArm.pick_sample_from_userarea()
         uFactory_xArm.place_sample_to_bed(i)
-        obs = finish_ok(obs, extra_meta={"source": "userarea"})
+        obs = finish_ok(obs, sample=i, extra_meta={"source": "userarea"})
     except Exception as e:
         obs = finish_err(obs, e)
     finally:

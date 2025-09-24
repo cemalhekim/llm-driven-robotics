@@ -1,3 +1,0 @@
-{"ts": "2025-09-02T14:56:15Z", "run_id": "20250902165547", "measurement": "ocp", "value": 0.37269891473714467, "sample": 1, "sample_id": 1, "meta": {"pose": "measurementstation"}}
-{"ts": "2025-09-02T14:56:55Z", "run_id": "20250902165547", "measurement": "cv", "value": 0.42167743790661816, "sample": 1, "sample_id": 1, "meta": {"pose": "measurementstation"}}
-{"ts": "2025-09-02T14:57:39Z", "run_id": "20250902165547", "measurement": "cv", "value": 0.33164844742430977, "sample": 2, "sample_id": 2, "meta": {"pose": "measurementstation"}}

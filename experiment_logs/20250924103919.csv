@@ -1,0 +1,3 @@
+ts,step,feature,sample,value_ocp,value_ca,value_cv,t_start,t_end,duration_s,metrics,meta
+2025.09.24.10.39.44,measurement,OCP,1,0.7722578989890219,,,1758703159.8632123,1758703184.5522845,24.689072132110596,{},"{""tool"": ""ocp_measurement"", ""args"": {""i"": 1}, ""status"": ""ok"", ""error"": null, ""pose"": ""measurementstation""}"
+2025.09.24.10.40.09,measurement,CV,1,,,0.21491894973290504,1758703184.557291,1758703209.2974744,24.740183353424072,{},"{""tool"": ""cv_measurement"", ""args"": {""i"": 1}, ""status"": ""ok"", ""error"": null, ""pose"": ""measurementstation""}"

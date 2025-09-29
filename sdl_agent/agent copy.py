@@ -1,33 +1,51 @@
 from smolagents import CodeAgent, LiteLLMModel, tool
+import csv
 
-# Model definition
 model = LiteLLMModel(
     model_id="ollama/qwen2.5-coder:7b",
     api_base="http://localhost:11434",
-    system_prompt="You are a Python coding assistant. Always return clean and working code."
+    system_prompt="You are a terse Python coding assistant. Use tools precisely."
 )
 
 @tool
-def add_numbers(a: int, b: int) -> int:
+def csv_feature_stats(path: str, feature: str) -> dict:
     """
-    Add two integers.
+    Compute stats for a feature from a CSV file.
 
     Args:
-        a (int): The first integer.
-        b (int): The second integer.
+        path (str): Full path to the CSV file.
+        feature (str): One of 'OCP','CA','CV'.
 
     Returns:
-        int: The sum of the two integers.
+        dict: {"count": int, "min": float, "max": float, "mean": float}
     """
-    return a + b
+    feature = feature.upper()
+    col = {"OCP":"value_ocp","CA":"value_ca","CV":"value_cv"}.get(feature)
+    if not col:
+        raise ValueError("feature must be OCP, CA, or CV")
 
-# Create agent
+    n = 0; s = 0.0; mn = None; mx = None
+    with open(path, newline="", encoding="utf-8") as f:
+        rdr = csv.DictReader(f)
+        for row in rdr:
+            v = row.get(col)
+            if v is None or v == "":
+                continue
+            x = float(v)
+            n += 1; s += x
+            mn = x if mn is None else min(mn, x)
+            mx = x if mx is None else max(mx, x)
+
+    return {"count": n, "min": mn, "max": mx, "mean": (s/n if n else None)}
+
 agent = CodeAgent(
     model=model,
-    tools=[add_numbers],
-    add_base_tools=True
+    tools=[csv_feature_stats],
+    add_base_tools=False,
 )
 
-# Run a query
-response = agent.run('a = 3, b = 5, c = "random text", what is b?')
-print("Agent response:", response)
+# Usage with your absolute path
+response = agent.run(
+    r"Call csv_feature_stats on C:\Users\chekim\Workspace\llm-driven-robotics\experiment_logs\20250924104104.csv for OCP"
+)
+print(response)

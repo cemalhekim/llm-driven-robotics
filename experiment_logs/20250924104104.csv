@@ -1,7 +1,6 @@
 ts,step,feature,sample,value_ocp,value_ca,value_cv,t_start,t_end,duration_s,metrics,meta
-2025.09.24.10.41.29,measurement,OCP,2,0.052355263231294025,,,1758703264.6880891,1758703289.1591778,24.471088647842407,{},"{""tool"": ""ocp_measurement"", ""args"": {""i"": 2}, ""status"": ""ok"", ""error"": null, ""pose"": ""measurementstation""}"
-2025.09.24.10.41.53,measurement,CA,1,,0.10604695308145173,,1758703289.1640103,1758703313.9239693,24.75995898246765,{},"{""tool"": ""ca_measurement"", ""args"": {""i"": 1}, ""status"": ""ok"", ""error"": null, ""pose"": ""measurementstation""}"
-2025.09.24.10.42.15,interraction,,1,,,,1758703313.9269783,1758703335.0219114,21.094933032989502,{},"{""tool"": ""bring_sample_to_user"", ""args"": {""i"": 1}, ""status"": ""ok"", ""error"": null, ""target"": ""userarea""}"
-2025.09.24.10.42.35,interraction,,1,,,,1758703335.0269318,1758703355.5919068,20.564975023269653,{},"{""tool"": ""collect_sample_from_user"", ""args"": {""i"": 1}, ""status"": ""ok"", ""error"": null, ""source"": ""userarea""}"
-2025.09.24.10.41.53,measurement,OCP,1,0.6516
-2025.09.24.10.41.53,measurement,OCP,3,0.1564968,,,,,,,
+2025.09.24.10.41.29,measurement,OCP,2,0.052355263231294025,0,0,1758703264.6880891,1758703289.1591778,24.471088647842407,{},"{""tool"": ""ocp_measurement"", ""args"": {""i"": 2}, ""status"": ""ok"", ""error"": null, ""pose"": ""measurementstation""}"
+2025.09.24.10.41.53,measurement,CA,1,0,0.10604695308145173,0,1758703289.1640103,1758703313.9239693,24.75995898246765,{},"{""tool"": ""ca_measurement"", ""args"": {""i"": 1}, ""status"": ""ok"", ""error"": null, ""pose"": ""measurementstation""}"
+2025.09.24.10.43.53,measurement,OCP,1,0.6516,0,0,3785345,78535473,453453,{},"{""tool"": ""ocp_measurement"", ""args"": {""i"": 2}, ""status"": ""ok"", ""error"": null, ""pose"": ""measurementstation""}"
+2025.09.24.10.44.53,measurement,OCP,3,0.1564968,0,0,75387435,434534,453453,{},"{""tool"": ""ocp_measurement"", ""args"": {""i"": 2}, ""status"": ""ok"", ""error"": null, ""pose"": ""measurementstation""}"
+2025.09.24.10.45.53,measurement,CA,1,0,0.864456,0,1758703289.1640103,1758703313.9239693,24.75995898246765,{},"{""tool"": ""ca_measurement"", ""args"": {""i"": 1}, ""status"": ""ok"", ""error"": null, ""pose"": ""measurementstation""}"

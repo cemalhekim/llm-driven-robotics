@@ -1,19 +1,19 @@
 # toolsfake.py
 
 def ocp_measurement(i: int):
-    print("FAKE: Performing OCP measurement for sample", i)
+    print("OCP",i)
 
 def ca_measurement(i: int):
-    print("FAKE: Performing CA measurement for sample", i)
+    print("CA",i)
 
 def cv_measurement(i: int):
-    print("FAKE: Performing CV measurement for sample", i)
+    print("CV",i)
 
 def bring_sample_to_user(i: int):
-    print("FAKE: Bringing sample #", i, "to user")
+    print("B",i)
 
 def collect_sample_from_user(i: int):
-    print("FAKE: Collecting sample #", i, "from user")
+    print("C",i)
 
 def go_home():
-    print("FAKE: Going home")
+    print("H")

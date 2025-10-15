@@ -1,0 +1,100 @@
+{"id": 1, "text": "do ocp for sample 1 then cv for sample 1"}
+{"id": 2, "text": "bring me the 5th, then go home"}
+{"id": 3, "text": "do ca for sample 2 then bring me the 3rd"}
+{"id": 4, "text": "do cv for the 4th sample and then go home"}
+{"id": 5, "text": "please bring the first sample and afterwards measure its ocp"}
+{"id": 6, "text": "perform ocp measurements sequentially on all samples"}
+{"id": 7, "text": "fetch sample 2 to the user zone and put it back later"}
+{"id": 8, "text": "run chronoamperometry then cyclic voltammetry for sample 5"}
+{"id": 9, "text": "retrieve the fourth specimen and park the arm home"}
+{"id": 10, "text": "conduct ocp then ca on the 3rd specimen"}
+{"id": 11, "text": "collect sample 2 from user area and perform cv"}
+{"id": 12, "text": "do ocp for the first, then cv for the second sample"}
+{"id": 13, "text": "grab the fifth sample and carry out ca"}
+{"id": 14, "text": "run cv for the third one and hand it to me"}
+{"id": 15, "text": "analyze sample four with ocp then ca"}
+{"id": 16, "text": "bring sample two first and execute cv afterwards"}
+{"id": 17, "text": "measure ocp for samples one and two"}
+{"id": 18, "text": "perform ca on the third then go home"}
+{"id": 19, "text": "fetch sample 1 and take its ocp reading"}
+{"id": 20, "text": "carry out cv for sample 5 and bring it here"}
+{"id": 21, "text": "execute ocp followed by ca for specimen 2"}
+{"id": 22, "text": "deliver the third sample and later collect it"}
+{"id": 23, "text": "perform ocp then cv on sample four"}
+{"id": 24, "text": "get sample five, run ocp"}
+{"id": 25, "text": "run ca on the first and then hand it to me"}
+{"id": 26, "text": "measure cv on second and park home"}
+{"id": 27, "text": "bring fourth, then execute ca"}
+{"id": 28, "text": "conduct ocp then ca on number three"}
+{"id": 29, "text": "take back sample one from user and do cv"}
+{"id": 30, "text": "perform ocp then cv on fifth sample"}
+{"id": 31, "text": "fetch second specimen then run ocp"}
+{"id": 32, "text": "carry out ca for fourth and then bring it here"}
+{"id": 33, "text": "cv on first, finish by homing"}
+{"id": 34, "text": "bring the third piece and perform ca"}
+{"id": 35, "text": "run ocp then ca for sample two"}
+{"id": 36, "text": "deliver fifth to me then return it"}
+{"id": 37, "text": "ocp then cv for fourth"}
+{"id": 38, "text": "bring the first one and run ocp"}
+{"id": 39, "text": "do ca on the third then give it to user"}
+{"id": 40, "text": "cv measurement for sample two then home"}
+{"id": 41, "text": "retrieve fourth sample, perform ca"}
+{"id": 42, "text": "ocp then ca on sample five"}
+{"id": 43, "text": "pick third from user and do cv"}
+{"id": 44, "text": "run ocp and cv for sample one"}
+{"id": 45, "text": "fetch second sample then analyze ocp"}
+{"id": 46, "text": "ca on fourth, bring it to me"}
+{"id": 47, "text": "perform cv for sample five, then home"}
+{"id": 48, "text": "bring third and execute ca"}
+{"id": 49, "text": "ocp then ca for second sample"}
+{"id": 50, "text": "retrieve first sample then collect"}
+{"id": 51, "text": "carry out cv for first then ca for first"}
+{"id": 52, "text": "bring me number 4 then run ocp"}
+{"id": 53, "text": "run ocp for sample three, afterwards bring it"}
+{"id": 54, "text": "measure ca for sample 1 then cv"}
+{"id": 55, "text": "bring the fifth sample then home the robot"}
+{"id": 56, "text": "run ocp and cv on all specimens sequentially"}
+{"id": 57, "text": "do chronoamperometry for the 2nd sample and hand it back"}
+{"id": 58, "text": "fetch sample 3 and perform ocp and ca"}
+{"id": 59, "text": "analyze 1 with ocp then ca then home"}
+{"id": 60, "text": "bring 5, do ca, then cv"}
+{"id": 61, "text": "carry sample 2 to user, wait, and bring home"}
+{"id": 62, "text": "measure ocp on sample 3 then fetch it"}
+{"id": 63, "text": "grab the first sample, perform cv, and return it"}
+{"id": 64, "text": "perform ca on sample 4 and finish"}
+{"id": 65, "text": "execute ocp then cv on every second sample"}
+{"id": 66, "text": "retrieve sample 1, do ocp, then cv"}
+{"id": 67, "text": "carry out ca and cv for sample 2"}
+{"id": 68, "text": "bring third sample and go home"}
+{"id": 69, "text": "run ocp on sample 5, then fetch it"}
+{"id": 70, "text": "perform ca on 3rd and then collect it back"}
+{"id": 71, "text": "bring me sample one, then conduct ca"}
+{"id": 72, "text": "ocp measurement for all except sample five"}
+{"id": 73, "text": "retrieve sample 2, measure cv, then home"}
+{"id": 74, "text": "run cv and ocp for sample four in that order"}
+{"id": 75, "text": "bring fifth sample, take ocp then ca"}
+{"id": 76, "text": "collect sample 4 from user area and go home"}
+{"id": 77, "text": "do ocp for 2 and 3, then return home"}
+{"id": 78, "text": "fetch the first one, perform cv"}
+{"id": 79, "text": "bring sample 5, collect it back, then home"}
+{"id": 80, "text": "carry out ca on samples 1 and 2"}
+{"id": 81, "text": "run ocp on sample 3, then cv"}
+{"id": 82, "text": "fetch 4th sample and do nothing else"}
+{"id": 83, "text": "perform ca on 5, cv on 5, ocp on 5"}
+{"id": 84, "text": "bring the 3rd sample, then bring the 4th"}
+{"id": 85, "text": "conduct ocp, then cv, then home"}
+{"id": 86, "text": "retrieve second, analyze ca, return to bed"}
+{"id": 87, "text": "run ca on sample 1, 2, and 3"}
+{"id": 88, "text": "bring 5th sample, ocp it, cv it"}
+{"id": 89, "text": "do ocp for every sample"}
+{"id": 90, "text": "collect the 2nd and 3rd samples from user area"}
+{"id": 91, "text": "fetch sample four, perform ocp, then home"}
+{"id": 92, "text": "run ca on first, cv on third, and ocp on fifth"}
+{"id": 93, "text": "bring second, wait, and send it back"}
+{"id": 94, "text": "conduct cv on 5 and go home"}
+{"id": 95, "text": "carry sample 3 to user, then do ca"}
+{"id": 96, "text": "perform ocp for 1st, 2nd, and 5th samples"}
+{"id": 97, "text": "retrieve the fourth sample and measure cv"}
+{"id": 98, "text": "collect sample one, perform ocp, return it"}
+{"id": 99, "text": "bring me the third sample and perform all tests ocp ca cv"}
+{"id": 100, "text": "just send the robot to home position"}

@@ -1,0 +1,5 @@
+{"id": 6, "text": "Collect sample from user area and place it in the 3rd slot.", "smol_status": "success", "smol_time": 69.5, "smol_trace": "C3", "smol_inputtokens": 2048, "smol_outputtokens": 41}
+{"id": 7, "text": "Do the OCP on the same sample, continue with CV.", "smol_status": "success", "smol_time": 66.99, "smol_trace": "OCP3CV3", "smol_inputtokens": 2048, "smol_outputtokens": 47}
+{"id": 8, "text": "Put the sample back in the rack for cleaning.", "smol_status": "success", "smol_time": 72.89, "smol_trace": "H", "smol_inputtokens": 2048, "smol_outputtokens": 32}
+{"id": 9, "text": "Get another sample from the rack Position number 1, and do only CA.", "smol_status": "success", "smol_time": 73.81, "smol_trace": "B1CA1", "smol_inputtokens": 2048, "smol_outputtokens": 45}
+{"id": 10, "text": "After measuring CA, bring the sample to the user area.", "smol_status": "success", "smol_time": 75.67, "smol_trace": "CA1B1", "smol_inputtokens": 2048, "smol_outputtokens": 46}

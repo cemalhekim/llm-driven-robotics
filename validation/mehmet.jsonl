@@ -1,0 +1,5 @@
+{"id": 1, "text": "Collect sample from user area then perform OCP then send sample to the third slot.", "smol_status": "success", "smol_time": 159.27, "smol_trace": "C1OCP1B3", "smol_inputtokens": 3028, "smol_outputtokens": 65}
+{"id": 2, "text": "Take sample 1 from first slot, perform CA then send sample to the user area.", "smol_status": "success", "smol_time": 23.33, "smol_trace": "C1CA1B1", "smol_inputtokens": 6227, "smol_outputtokens": 130}
+{"id": 3, "text": "Take sample from user area then put the sample in the fourth slot.", "smol_status": "success", "smol_time": 21.25, "smol_trace": "C1B4", "smol_inputtokens": 9593, "smol_outputtokens": 178}
+{"id": 4, "text": "Take sample from user area, perform first OCP then CA then bring the sample back to user area.", "smol_status": "success", "smol_time": 24.03, "smol_trace": "C1OCP1CA1B1", "smol_inputtokens": 13108, "smol_outputtokens": 255}
+{"id": 5, "text": "Take sample from slot 1 then put it in slot 2 then take it back and put it in slot 3.", "smol_status": "success", "smol_time": 26.81, "smol_trace": "C1B2C2B3", "smol_inputtokens": 16823, "smol_outputtokens": 335}

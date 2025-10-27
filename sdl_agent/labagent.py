@@ -1,8 +1,7 @@
 # labagent.py
 
 from smolagents import CodeAgent, LiteLLMModel, GradioUI, tool
-import duckdb
-from . import toolsfake
+import toolsfake
 
 
 @tool

@@ -1,8 +1,8 @@
 import json
 import os
 
-RESULTS_PATH = r"C:\Users\chekim\Workspace\llm_robotic_control\validation\validation_results.jsonl"
-REFERENCES_PATH = r"C:\Users\chekim\Workspace\llm_robotic_control\validation\correct_simulated_outputs.jsonl"
+RESULTS_PATH = r"C:\Users\cemal\Workspace\llm-driven-robotics\validation\ozlem.jsonl"
+REFERENCES_PATH = r"C:\Users\cemal\Workspace\llm-driven-robotics\validation\ozlem_soll.jsonl"
 
 print(f"Reading results from: {RESULTS_PATH}")
 print(f"Reading references from: {REFERENCES_PATH}")
@@ -52,3 +52,20 @@ if mismatches:
     print("Mismatched cases:")
     for m in mismatches:
         print(f"  ID {m['id']:>3}: expected={m['expected']} | got={m['got']}")
+
+times, inputs, outputs = [], [], []
+
+with open(RESULTS_PATH, "r", encoding="utf-8") as file:
+    for line in file:
+        data = json.loads(line)
+        times.append(float(data["smol_time"]))
+        inputs.append(int(data["smol_inputtokens"]))
+        outputs.append(int(data["smol_outputtokens"]))
+
+avg_time = sum(times) / len(times)
+avg_input = sum(inputs) / len(inputs)
+avg_output = sum(outputs) / len(outputs)
+
+print(f"Average smol_time: {avg_time:.4f}s")
+print(f"Average smol_inputtokens: {avg_input:.4f}")
+print(f"Average smol_outputtokens: {avg_output:.4f}")

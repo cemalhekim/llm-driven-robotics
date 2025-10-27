@@ -1,6 +1,6 @@
 import json
 
-filename = r"C:\Users\chekim\Workspace\llm_robotic_control\validation\validation_results_first150.jsonl"
+filename = r"C:\Users\cemal\Workspace\llm-driven-robotics\validation\annica.jsonl"
 
 times, inputs, outputs = [], [], []
 

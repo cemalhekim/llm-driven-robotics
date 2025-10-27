@@ -1,0 +1,5 @@
+{"id": 1, "expected": "OCP1CV1CA1OCP2CV2CA2OCP3CV3CA3"}
+{"id": 2, "expected": "OCP2CA2CV2H"}
+{"id": 3, "expected": "C3OCP3B3C3OCP3B3"}
+{"id": 4, "expected": "CV1B1CV2B2CV3B3"}
+{"id": 5, "expected": "OCP4CA4CV4B4OCP5CA5CV5B5H"}

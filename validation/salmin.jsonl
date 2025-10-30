@@ -3,3 +3,4 @@
 {"id": 3, "text": "Take both samples again and measure CA for one hour in -0.2, -0.4 and -0.6 V.", "smol_status": "success", "smol_time": 37.97, "smol_trace": "C4CA4C4CA4CA4CA4C5CA4CA4C5C5CA5CA5CA5CA5", "smol_inputtokens": 17287, "smol_outputtokens": 496}
 {"id": 4, "text": "Take one sample from fifth slot and measure CA, changing potential every 60 seconds by +100 mV from -1 to 0 V.", "smol_status": "success", "smol_time": 223.24, "smol_trace": "C5CA5CA5", "smol_inputtokens": 25479, "smol_outputtokens": 716}
 {"id": 5, "text": "First measure OCP for 200 s, then CV (50 cycles from -0.2 to 0.2 V vs OCP), then CA for 1 h at -0.4 V vs OCP.", "smol_status": "success", "smol_time": 226.50, "smol_trace": "OCP5OCP5OCP5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CV5CA5", "smol_inputtokens": 50055, "smol_outputtokens": 1879}
+    

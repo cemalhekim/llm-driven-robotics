@@ -12,5 +12,12 @@ Automatisierungstechnik. Source files exactly as exported from Overleaf.
 
 Build with `pdflatex main.tex` (no bibtex pass needed).
 
+> The preamble loads `\usepackage[ddmmyyyy]{isodate}`. `ddmmyyyy` is not an
+> isodate option — the package treats an unknown option as a language name and
+> aborts looking for `ddmmyyyy.idf` — so this **fails on a stock TeX Live**
+> install. Overleaf tolerated it. The package also does not affect `\today`, so
+> the line was inert even when it did load. Left as submitted; the master thesis
+> template drops it.
+
 Sections: Motivation and Problem Statement · State of Research · Objectives ·
 Methodology · Strengths and Deliverables · Work Plan and Timeline · Bibliography.

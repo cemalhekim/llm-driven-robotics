@@ -1,0 +1,77 @@
+\ch{Discussion and Evaluation}{discussion}
+
+The results show that the SDL Agent performs reliably in simulated environments but faces reduced accuracy when exposed to diverse real-world inputs beyond its defined operational scope. Within its available toolset, the agent consistently interprets NL instructions and executes correct actions, confirming that its reasoning and execution mechanisms function as intended and validating the robustness of the overall approach. Beyond correctness, the evaluation also quantified the agent’s computational behavior and efficiency. The \texttt{Qwen2.5-7B Instruct} model maintained an average response latency of approximately $79$\,seconds per action on the employed workstation, a limitation primarily tied to hardware performance rather than the reasoning architecture itself. Token analysis revealed a marked disparity between simulated and real-user runs: simulated queries averaged $2048$ input and $46.2$ output tokens, whereas real-user interactions required around $11062$ input and $415.6$ output tokens. This increase indicates that unstructured or overly complex queries triggered extended reasoning loops as the agent attempted to interpret and respond meaningfully to out-of-scope instructions. 
+
+As explained before, the decrease in success rate observed during real experimental runs can be attributed to several factors. A closer examination of the interaction logs reveals that some users formulated queries that exceeded the system’s defined capabilities. For instance, User~\#3 frequently attempted to modify experimental parameters dynamically, issuing commands such as:
+
+\begin{itemize}
+    \item \texttt{take both samples again and measure CA for one hour in -0.2, -0.4 and -0.6 V}
+    \item \texttt{take one sample from fifth slot and measure CA and change the potential every 60 seconds 100 mV higher, starting from -1 to 0 V}
+    \item \texttt{first measure OCP for 200 seconds, then CV 50 cycles from -0.2 to 0.2 V vs. OCP and then measure CA in one hour with -0.4 V vs. OCP}
+\end{itemize}
+
+These examples illustrate that the user attempted to alter fixed experimental parameters, despite such functionality not being included in the system’s current feature set as clearly stated in the user guide. This indicates that User~\#3 made incorrect assumptions about the agent’s capabilities, which led to failed task executions and contributed to the observed reduction in overall performance.
+
+User~\#4, on the other hand, attempted to manipulate the physical configuration of the samples beyond the operational boundaries of the robotic cell. Example queries included instructions such as:
+
+\begin{itemize}
+    \item \texttt{take sample from slot 1 then put it in slot 2 then take it back and put it in slot 3}
+\end{itemize}
+
+Such interactions reflect an effort to test the spatial and mechanical limits of the system, despite these actions not being supported or described as available functions in the user guideline document. These attempts to exceed the defined workspace constraints resulted in failed executions and further illustrate how user assumptions about physical flexibility can negatively affect system performance.
+
+Users~\#1 and~\#5 formulated their inputs in accordance with the provided guidelines, which resulted in comparatively higher success rates. Notably, User~\#5 submitted two multi-step measurement requests that depended on the outcomes of preceding experiments, even though it was not stated in the guideline document.
+
+One of the multi-step measurement requests as follows:
+\begin{itemize}
+    \item \texttt{Run CA for all samples and for the sample with the lowest current density also OCP followed by CV.}
+\end{itemize}
+
+These kind of interactions highlighted the potential for integrating a dedicated data-analysis agent with the current laboratory-control agent to enable conditional decision-making and establish a fully functional multi-agent framework for autonomous experimentation.
+
+These observations indicate that some users did not fully adhere to or attempt to understand the operational constraints of the system, instead interacting with it as if it were an unrestricted, fully capable autonomous platform. From a scientific perspective, this behavior provides valuable insight, as it reflects how users might engage with such a system in real-world product-level scenarios, where adherence to documentation or predefined boundaries cannot always be assumed, and systems must therefore be designed to handle unstructured or uninformed user behavior robustly.
+
+When user inputs remained consistent with the defined operational capabilities of the SDL, the system exhibited a near-perfect success rate. This outcome indicates that the agent’s internal reasoning and mapping processes are coherent and that the residual errors primarily originate from variations in user phrasing rather than deficiencies in the system design.
+
+To better assess the agent’s true operational reliability, the dataset was re-evaluated after excluding all user queries that were clearly inconsistent with the experimental boundaries defined in the briefing document. A total of eight out of twenty-five instructions were identified as being entirely outside the scope of the SDL’s supported functions, primarily due to attempts to modify fixed parameters or perform physically infeasible manipulations. When these invalid queries were removed, the recalculated performance metrics presented in Table~\ref{tab:realvalid} indicate a notable improvement in the system’s effectiveness under compliant usage conditions.
+
+\begin{table}[H]
+\centering
+\caption{Collective Analytic Results from Real Experiments (Only Queries Aligned with the Briefing Document)}
+\label{tab:realvalid}
+\begin{tabular}{l c}
+\hline
+\textbf{Metric} & \textbf{Value} \\ \hline
+Total tests     & $16$ \\
+Matches & $11$ \\
+Mismatches      & $5$ \\
+Success rate    & $68.75\%$ \\ \hline
+\end{tabular}
+\end{table}
+
+This adjusted analysis raises the success rate from $40.0\%$ to approximately $68.75\%$, validating that most execution errors in the original dataset stemmed from out-of-scope user behavior rather than deficiencies in the reasoning or control framework itself. Consequently, when interactions remain consistent with the documented operational limits, the SDL Agent demonstrates substantially higher reliability and practical usability within its designed domain.
+
+Apart from these edge cases, the principal objectives of this study have been achieved. The results demonstrate that a locally deployed AI Agent can effectively function as an interface between human operators and a collaborative autonomous environment such as a SDL. By enabling NL interaction in place of manual control or predefined scripting, the system reduces the operational complexity for non-expert users while maintaining the precision and reproducibility required for automated experimentation. These findings support the central hypothesis that a local agent-based framework offers an accessible and reliable means of interaction with complex autonomous systems.
+
+Although comparable systems and validation studies in this domain remain limited, the obtained results are consistent with previous research on language-based interfaces in autonomous environments. The developed SDL Agent achieves a comparable level of accuracy and consistency while introducing a locally deployable framework. Beyond the specific case of the SDL, the proposed approach can be generalized to other programmable autonomous systems that expose structured toolsets, suggesting that agent-based control may substantially lower the operational threshold for users across diverse technical domains.
+
+Enhancing the SDL Agent with additional safety layers to validate actions before execution would improve reliability and prevent unauthorized operations. Such mechanisms would safeguard the system and preserve experimental integrity. Building on the validation and evaluation outcomes, several extensions of this work, including but not limited to advanced safety mechanisms, will be outlined in the subsequent Future Work chapter.
+
+\ch{Future Work}{futurework}
+
+Building upon the results and insights gained from this study, several directions for future development and research can be identified. The current implementation of an AI Agent establishes a reliable foundation for language-based control in autonomous systems such as SDL's, yet it also reveals opportunities for improvement and extension. Future work can focus on both the software and hardware aspects of the system, aiming to enhance flexibility, safety, and scalability without altering the core operational principles demonstrated in this study.
+
+Although the Qwen2.5-7B-Instruct model proved to be efficient and sufficient for this application, future iterations of the system could explore models with higher reasoning and contextual understanding capabilities. Using larger or more specialized language models may improve reliability, particularly in environments involving a greater number of controllable tools or multi-agent coordination. In addition to locally hosted models, cloud-based LLM APIs such as those provided by OpenAI could be evaluated to compare their performance, consistency, and potential scientific advantages under similar experimental conditions.
+
+The structure and formulation of the system prompt play a critical role in determining the reliability and interpretability of the agent’s responses. Future work could therefore involve systematic experimentation with different prompt structures, levels of constraint, and instruction hierarchies to identify which configuration yields the most consistent and accurate tool selections. By comparing multiple prompt designs under identical conditions, it would be possible to derive clearer insights into how prompt composition influences reasoning stability in setups similar to the SDL environment.
+
+As discussed previously, the system’s safety mechanisms can be further improved to prevent unintended or unauthorized operations. This could be achieved by introducing an additional validation layer that checks each user query before execution. Such a layer could be implemented either within the agent’s own system-level prompting, where the feasibility of each requested action is evaluated, or through a secondary supervisory agent responsible for filtering and approving commands. Implementing these measures would strengthen operational safety and ensure that only valid and permitted procedures are executed within the SDL environment.
+
+Another possible extension involves expanding the NL interface from text-based input to voice control. In many collaborative environments, such as laboratories, clinical settings, or manufacturing lines, operators may need to interact with the system while their hands are occupied with physical tasks. Implementing speech-based interaction would enable hands-free communication with the agent, allowing scientists, engineers, or medical personnel to issue commands or request data in real time without interrupting their ongoing work. This adaptation would make the SDL Agent more practical in dynamic, task-intensive environments where continuous manual input is not feasible.
+
+On the hardware level, the SDL setup can be expanded by integrating additional measurement instruments, robotic manipulators, or auxiliary devices to increase the range of possible experimental operations. Incorporating new electrochemical measurement units, automated sample handling systems, or sensor modules would enhance both the functional diversity and precision of the platform. Such extensions would enable the SDL to perform a broader set of procedures, making it a more capable and versatile system for electrochemical experimentation and automated material characterization.
+
+As previously discussed, the methodology developed in this study is not restricted to a single implementation of a SDL but can be adapted to a wide range of autonomous environments. The same framework for agent-based control and NL interaction could be applied to pharmaceutical laboratories, biological research setups, or industrial manufacturing systems. Potential application domains include Biology-focused SDLs for automated experimentation, maker-lab integrations aimed at faster and more efficient prototyping, and collaborative robotic assembly lines where human operators and autonomous systems share tasks within a unified control architecture.
+
+A promising avenue for future development involves extending the system’s functionality to enable interactive discussion of experimental results. Preliminary implementation tests with a secondary agent demonstrated the feasibility of direct user communication regarding newly acquired measurement data from the SDL’s analytical functions. Although this capability lay beyond the defined scope of the present work, it highlights the potential of a multi-agent architecture in which one agent supervises experimental execution while another interprets and explains the resulting data. Integrating such a framework would establish a more comprehensive human-AI collaboration loop, allowing users not only to initiate experiments but also to receive immediate, context-aware feedback on their outcomes. Taken together, the findings of this study confirm the technical viability and future potential of locally deployed agentic systems as intuitive, efficient, and reliable interfaces for autonomous experimental environments.
+

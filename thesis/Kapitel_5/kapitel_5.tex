@@ -1,0 +1,96 @@
+\ch{Results and Validation}{results}
+
+This chapter presents the experimental validation of the implemented SDL. \textbf{Section~\ref{sec:testresults}} reports the results of structured simulation runs used to quantify the reliability and determinism of the control framework under defined linguistic constraints. \textbf{Section~\ref{sec:userresults}} summarizes the user-based validation, assessing the system’s capacity to interpret unconstrained natural input.
+
+\sect{Results of the Simulation Runs}{testresults} 
+
+The first simulation phase included fifty developer-generated queries constructed with complete awareness of the SDL’s internal logic. These tests represent an idealized scenario, where the AI agent received clear and unambiguous inputs.  
+
+\begin{table}[H]
+\centering
+\caption{50 biased Test Results Summary}
+\begin{tabular}{l c}
+\hline
+\textbf{Metric} & \textbf{Value} \\ \hline
+Total tests     & $50$ \\
+Matches & $50$ \\
+Mismatches      & $0$ \\
+Success rate    & $100.00\%$ \\ 
+Avarage response time & $66.5584s$ \\
+Avarage input tokens    & $2048.0000$ \\ 
+Avarage output tokens    & $44.9600$ \\ \hline
+\end{tabular}
+\end{table}
+
+All queries were correctly interpreted and executed, yielding a perfect success rate of $100\%$, as shown in Table 5.1.  
+This confirms the logical validity and internal consistency of the developed function-calling and reasoning structure when the input precisely matches the expected task schema.
+
+This phase validated the correctness of the tool-mapping logic and proved that the agent’s deterministic reasoning loop performs flawlessly when no linguistic ambiguity is present.  
+All deviations observed later therefore originate from linguistic or contextual variability rather than algorithmic error.
+
+A second simulation phase with one hundred queries used diverse linguistic structures to test robustness against variation in syntax and semantics.  
+
+
+\begin{table}[H]
+\centering
+\caption{100 diverse Test Results Summary}
+\begin{tabular}{l c}
+\hline
+\textbf{Metric} & \textbf{Value} \\ \hline
+Total tests     & $100$ \\
+Matches & $98$ \\
+Mismatches      & $2$ \\
+Success rate    & $98.00\%$ \\ 
+Avarage response time & $85.0588s$ \\
+Avarage input tokens    & $2048.00$ \\ 
+Avarage output tokens    & $46.8200$ \\ \hline
+\end{tabular}
+\end{table}
+
+The agent achieved $98\%$ accuracy, shown in Table 5.2. The two mismatches were analyzed and traced to slightly ambiguous phrasing that caused incorrect tool-parameter associations, validating that the model’s reasoning remains functionally correct but semantically sensitive. When both simulated results were combined through analytical evaluation, the overall success rate becomes $98.\overline{6}\%$.
+
+These findings validate that, within the defined tool set and system prompt boundaries, the SDL Agent reliably translates NL intent into deterministic robotic actions. Any residual mismatches are not structural faults but semantic edge cases, confirming robustness of the designed architecture.
+
+
+\sect{Results of the User Testings}{userresults} 
+
+The second validation involved five external participants issuing natural instructions to the SDL Agent.  
+This experiment validated not only technical correctness but also practical interpretability, how effectively real users could convey intent to the system.  
+
+\begin{table}[H]
+\centering
+\caption{Analytical Results of Participant Inputs}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccc}
+\hline
+\textbf{Metric} & \textbf{P1} & \textbf{P2} & \textbf{P3} & \textbf{P4} & \textbf{P5} & \textbf{Collective} \\ \hline
+Total tests & $5$ & $5$ & $5$ & $5$ & $5$ & $25$ \\
+Matches & $4$ & $2$ & $0$ & $2$ & $3$ & $10$ \\
+Mismatches & $1$ & $3$ & $5$ & $4$ & $2$ & $15$ \\
+Success rate [\%] & $80.00$ & $40.00$ & $0.00$ & $20.00$ & $60.00$ & $40.00$ \\
+Average input tokens & $2048.00$ & $2048.00$ & $20406.00$ & $9755.80$ & $21051.80$ & $11061.92$ \\
+Average output tokens & $84.20$ & $42.20$ & $649.00$ & $192.60$ & $1110.20$ & $415.24$ \\\hline
+\end{tabular}%
+}
+\end{table}
+
+While simulation runs demonstrated nearly flawless logical operation, real users achieved an average success rate of only $40\%$.  
+Validation analysis identified that some users produced ambiguous or out of scope commands, which led to incorrect tool calls or unrecognized task chains. No critical logic or execution faults occurred, proving that the reasoning architecture itself remained valid, but its performance heavily depended on the clarity and actual intent of user phrasing.
+
+\begin{table}[H]
+\centering
+\caption{Comparison of Collective Simulation and Real-World Results}
+\label{tab:comparisonresults}
+\begin{tabular}{l c c}
+\hline
+\textbf{Metric} & \textbf{Simulation Runs (150 Queries)} & \textbf{User Testings (25 Queries)} \\ \hline
+Total tests & $150$ & $25$ \\
+Matches & $148$ & $10$ \\
+Mismatches & $2$ & $15$ \\
+Success rate & $98.6\%$ & $40.0\%$ \\
+Average input tokens & $2048.00$ & $11061.92$ \\
+Average output tokens & $46.20$ & $415.64$ \\ \hline
+\end{tabular}
+\end{table}
+
+The drastic drop in success rate validates that while the agentic control system is functionally correct, it is contextually brittle when exposed to uncontrolled phrasing. This will further explored in Chapter \ref{ch:discussion}.

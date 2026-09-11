@@ -1,0 +1,9 @@
+\newcount\checkngerman
+\newcount\checkusenglish
+\newcount\checkcolor
+\newcount\checkcolortbl
+\newcount\checkfloatflt
+\@ifpackageloaded{ngerman}{\checkngerman=1}{\checkngerman=0}
+\@ifpackageloaded{color}{\checkcolor=1}{\checkcolor=0}
+\@ifpackageloaded{colortbl}{\checkcolortbl=1}{\checkcolortbl=0}
+\@ifpackageloaded{floatflt}{\checkfloatflt=1}{\checkfloatflt=0}

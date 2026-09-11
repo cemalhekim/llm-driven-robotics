@@ -1,0 +1,93 @@
+%---------------------------------------------------------------
+% verwendete packages
+%---------------------------------------------------------------
+\usepackage[english]{babel}
+% neue deutsche Trennmuster usw.
+\usepackage[utf8]{inputenc}       % Quelltext ist Latin-1 (d.h. Windows-) kodiert (direkte Eingabe von Umlauten usw.)
+\usepackage{longtable}              % Tabellen über mehrere Seiten
+\usepackage[T1]{fontenc}            % Cork-encoding für erweiterte Zeichensätze (entweder mit ae oder cm-super-fonts verwenden)
+\usepackage[scale=0.92]{helvet}
+\usepackage{textcomp}               % erweiterte Sonderzeichen
+\usepackage{fancyhdr}               % beliebige Kopfzeilendefinition
+\usepackage{graphicx}               % Einbinden von Grafiken
+\usepackage{amssymb,amsbsy,amsmath} % AMS
+\renewcommand{\familydefault}{\sfdefault}
+%\usepackage[slantedGreek]{mathpazo} % Schriftart Palatino auswählen
+\usepackage{eso-pic}                % Für Wasserzeichen für Draft
+\usepackage{verbatim}               % Verbatimumgebung
+\usepackage{fancyvrb}               % Verbatimumgebung
+\usepackage{color}                  % Farbdefinitionen
+\usepackage{xspace}                 % vermeidet Fehler von Leerzeichen nach eigenen Befehlen
+\usepackage[rel]{overpic}           % Bilder bearbeiten
+\usepackage{colortbl}               % Farbe in Tabellen
+\usepackage{textcomp}               % Sonderzeichen
+\usepackage{floatflt}               % umflossene Grafiken
+\usepackage{array}                  % erweiterte Felder
+\usepackage{booktabs}               % verbessertes Tabellenlayout
+\usepackage{float} % in the preamble
+\usepackage{csquotes}
+\usepackage{makecell} % add this in your preamble
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{qrcode}
+
+\usepackage{pdfpages}
+
+
+\lstset{ backgroundcolor=\color{gray!10}, basicstyle=\ttfamily\small, frame=single, breaklines=true, numbers=left, numberstyle=\tiny\color{gray}, keywordstyle=\color{blue}, commentstyle=\color{gray}, stringstyle=\color{orange}, }
+
+\lstdefinelanguage{json}{
+    basicstyle=\ttfamily\small,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=5pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    literate=
+     *{:}{{{\color{black}:}}}{1}
+      {,}{{{\color{black},}}}{1}
+      {\{}{{{\color{black}\{}}}{1}
+      {\}}{{{\color{black}\}}}}{1}
+      {[}{{{\color{black}[}}}{1}
+      {]}{{{\color{black}]}}}{1},
+}
+%
+%---------------------------------------------------------------
+% nicht verwendete packages
+%---------------------------------------------------------------
+%\usepackage{multicol}               %
+%\usepackage{ae}                     % ae-Zeichensätze für pdf-Darstellung, aber Umlaute nicht gut (Trennung!)
+%\usepackage{mathptmx}               % Times verwenden
+%\usepackage[scaled]{helvet}         % Helvetica
+%\renewcommand{\familydefault}{\sfdefault} % auf serifenlose Schrift umschalten
+%\usepackage{cmbright}               % cm bright
+%\usepackage{courier}
+%\usepackage{pifont}
+%\usepackage{showkeys} % im dvi-previewer werden verweise angezeigt
+%\usepackage{Styles/Sonstige/ifmfont}% Frutiger verwenden
+%\usepackage{eqmark}                 % Formellayout
+%\usepackage{framed}                 % umrandeter Text
+%\usepackage{lscape}                 % Querformat
+%\usepackage{pdflscape}              % Querfomrat für Reader automatisch drehen
+%\usepackage{ifthen}                 % zum Prüfen, ob Packages eingebunden
+%\usepackage{longtable}              % Tabellen über mehrere Seiten
+%\usepackage{natbib}                 % Style Bibliography
+%\usepackage[figuresright]{rotating} % Gleitumgebungen drehen (beidseitig geht nicht richtig... :-( )
+%\usepackage{textcomp}               % Style Bibliography
+%\usepackage[ngerman,USenglish]{babel}% deutsche Trennmuster für References ermöglichen
+%
+%---------------------------------------------------------------
+% Mehrere Literaturverzeichnisse aus einer *.bib-Datenbank
+%---------------------------------------------------------------
+%\usepackage{multibib}
+%\newcites{eigene}{ }
+%\newcites{andere}{ }
+%---------------------------------------------------------------
+% 
+\newfont{\fonttimes}{ptmr at 12pt}
+\newfont{\fonthelvet}{phvr at 11pt}
+\newfont{\fontpalatino}{pplr at 12pt}
+\newfont{\fontcm}{cmr12}

@@ -1,0 +1,840 @@
+%---------------------------------------------------------------
+% Eigene Befehle, Makros, Abkürzungen usw.
+% Einige erfordern besondere Packages!
+%
+% Im Allgemeinen keine Neudefinition bekannter Befehle.
+% Ausnahmen:
+% \t Tabelle
+% \u steile Einheit mit Abstand
+% \dh Abkürzung für 'das heißt'
+%---------------------------------------------------------------
+
+%---------------------------------------------------------------
+% Allgemeines
+%---------------------------------------------------------------
+\newcommand{\nc}{\newcommand}
+\nc{\rnc}{\renewcommand}
+%
+%---------------------------------------------------------------
+% Textformatierungen
+%---------------------------------------------------------------
+\nc{\cl}{\centerline}
+\nc{\x}[1]{\mbox{#1}}                   % mbox zur Vermeidung von Trennungen
+%\nc{\figfont}{\normalsize \rm}
+%\nc{\bvb}{\begin{verbatim}}
+%\nc{\evb}{\end{verbatim}}
+%
+%---------------------------------------------------------------
+% Bildunterschriften: 'a) Text' usw. nicht trennen
+%---------------------------------------------------------------
+\nc{\xa}{: a)~}
+\nc{\xb}{; b)~}
+\nc{\xc}{; c)~}
+\nc{\xd}{; d)~}
+\nc{\xe}{; e)~}
+\nc{\xf}{; f)~}
+%
+%---------------------------------------------------------------
+% Abstände
+%---------------------------------------------------------------
+\nc{\hs}[1]{\hspace*{#1}}
+\nc{\vs}[1]{\vspace*{#1}}
+%
+%---------------------------------------------------------------
+% Umschaltung Sprache für verschiedene Trennverzeichnisse
+% (interessant z.B. für Lit.verzeichnisse, in der Datenbasis
+% sollte \de bzw. \en enthalten sein).
+%---------------------------------------------------------------
+\nc{\en}{\selectlanguage{USenglish}}
+\nc{\de}{\selectlanguage{ngerman}}
+%
+%---------------------------------------------------------------
+% Abkürzungen für Literaturdatenbank
+%---------------------------------------------------------------
+\nc{\fb}[1]{. {\de \rm Fortschrittberichte VDI, \x{Reihe 11}: Schwingungstechnik, \x{Nr. #1}}}
+\nc{\te}[1]{, \en Int.~Gas Turbine~\&~Aeroeng.~Congress~\&~Exh., #1}
+\nc{\jsv}{\en J.~of Sound and Vibration}
+\nc{\vdiv}{\de VDI-Verlag}
+\nc{\ddorf}{\de D{\"u}sseldorf}
+%
+%---------------------------------------------------------------
+% Literatur zitieren
+%---------------------------------------------------------------
+\nc{\etal}{et~al.}
+\nc{\z}[2]{\x{\sc #1}~{\x{\cite{#2}}}}
+\nc{\zeigene}[2]{\x{\sc #1}~{\x{\citeeigene{#2}}}}
+\nc{\zandere}[2]{\x{\sc #1}~{\x{\citeandere{#2}}}}
+\nc{\nz}[2]{\x{\sc #1}~{\x{\nocite{#1}}}}
+\nc{\nzeigene}[1]{{\x{\nociteeigene{#1}}}} 
+\nc{\nzandere}[1]{{\x{\nociteandere{#1}}}}
+\nc{\zo}[1]{\x{\cite{#1}}}
+\nc{\ztr}[2]{{\sc #1}~{\x{\cite{#2}}}}
+%
+%---------------------------------------------------------------
+% Abkürzungen
+%---------------------------------------------------------------
+\nc{\zb}{z.\,B.\xspace}
+\nc{\zt}{z.\,T.\xspace}
+\nc{\ua}{u.\,a.\xspace}
+\nc{\uae}{u.\,ä.\xspace}
+\nc{\oa}{o.\,a.\xspace}
+\nc{\oae}{o.\,ä.\xspace}
+\nc{\bzw}{bzw.\xspace}
+\nc{\uu}{u.\,U.\xspace}
+\rnc{\dh}{d.\,h.\xspace}
+\nc{\ie}{i.\,e.\xspace}
+\nc{\eg}{e\,g.\xspace}
+%
+%---------------------------------------------------------------
+% Programmnamen und Eigennamen
+%---------------------------------------------------------------
+% Problem mit \sf unter Verwendung von Type1 Fonts und pdflatex.
+% Nach updmap mit der updmap.cfg von Martin steht die sfss1200.pfb,
+% die sonst mit der alten Version von updmap.cfg verwendet wurde,
+% nicht mehr zur Verfügung. Abhilfe: in updmap.cfg den Mapfile der cm-super-type1-
+% schriften mit aufnehmen, dann wird sfss1200.pfb sauber eingebunden. Oder aber
+% nicht \sf verwenden, sondern mit \newfont{\ssfont}{cmss10} auf bekannten Type1-
+% Font aus der bsr.map zurückgreifen. Problem: Skalierung bei eigener Definition.
+%
+% Erfordert xspace.sty zur Vermeidung von Leerzeichenfehlern nach eigenen Definitionen
+%
+\nc{\prog}[1]{{\sf{#1}}\xspace}
+%
+\nc{\cadax}{\prog{\x{CADA-X}}}
+\nc{\matlab}{\prog{Matlab}}
+\nc{\simulink}{\prog{Simulink}}
+\nc{\datur}{\prog{\x{Datur}}}
+\nc{\dates}{\prog{\x{Dates}}}
+\nc{\danko}{\prog{\x{Danko}}}
+\nc{\datar}{\prog{\x{Datar}}}
+\nc{\dankodatar}{\prog{\x{Danko/Datar}}}
+\nc{\ansys}{\prog{\x{Ansys}}}
+\nc{\hades}{\prog{\x{Hades}}}
+\nc{\sco}{\prog{\x{SC03}}}
+\nc{\sj}{\prog{\x{SJ18}}}
+\nc{\conv}{\prog{CONVERSION}}
+%\nc{\sol}{\prog{SOLUTION}}
+\nc{\pre}{\prog{PREPROCESSING}}
+\nc{\post}{\prog{POSTPROCESSING}}
+\nc{\opt}{\prog{OPTIMIZATION}}
+\nc{\unix}{\prog{\x{UNIX}}}
+\nc{\windows}{\prog{WINDOWS}}
+\nc{\ghostview}{\prog{GhostView}}
+\nc{\ghostscript}{\prog{GhostScript}}
+\nc{\dvips}{\prog{Dvips}}
+\nc{\miktex}{\prog{Miktex}}
+\nc{\bibtex}{\prog{Bibtex}}
+\nc{\powerpoint}{\prog{PowerPoint}}
+\nc{\fortran}{\prog{Fortran}}
+\nc{\winedt}{\prog{WINEDT}}
+\nc{\coreldraw}{\prog{CorelDraw}}
+\nc{\prettyplot}{\prog{PrettyPlot}}
+\nc{\adistiller}{\prog{AcrobatDistiller}}
+\nc{\areader}{\prog{AcrobatReader}}
+\nc{\distiller}{\prog{Distiller}}
+\nc{\java}{\prog{JAVA}}
+\nc{\ascii}{\prog{ASCII}}
+%
+%---------------------------------------------------------------
+% Tex-Specials
+%---------------------------------------------------------------
+\nc{\tex}{\TeX\xspace}
+\nc{\latex}{\LaTeX\xspace}
+\nc{\pdflatex}{Pdf\LaTeX\xspace}
+%
+%---------------------------------------------------------------
+% Eigennamen
+%---------------------------------------------------------------
+\nc{\name}[1]{\textsc{#1}\xspace}
+%
+\nc{\rayleigh}{\name{Rayleigh}}
+\nc{\cholesky}{\name{Cholesky}}
+\nc{\jacobi}{\name{Jacobi}}
+\nc{\hertz}{\name{Hertz}}
+\nc{\campbell}{\name{Campbell}}
+\nc{\newton}{\name{Newton}}
+\nc{\abbott}{\name{Abbott}}
+\nc{\coulomb}{\name{Coulomb}}
+\nc{\hilbert}{\name{Hilbert}}
+\nc{\cattaneo}{\name{Cattaneo}}
+\nc{\mindlin}{\name{Mindlin}}
+\nc{\fourier}{\name{Fourier}}
+\nc{\masing}{\name{Masing}}
+\nc{\lms}{\name{LMS}}
+\nc{\guyan}{\name{Guyan}}
+\nc{\spoke}{\name{Spoke}}
+\nc{\kronecker}{\name{Kronecker}}
+\nc{\lanczos}{\name{Lanczos}}
+\nc{\winkler}{\name{Winkler}}
+\nc{\euler}{\name{Euler}}
+%
+%---------------------------------------------------------------
+% Definition und Auswahl des Tabellenstils
+%---------------------------------------------------------------
+% Spaltendefinition für Tabellen (erfordert array.sty)
+% Bug: zusätzliche letzte Spalte muss mit p{0mm} definiert sein (warum??)
+\newcolumntype{L}{>{\raggedright}m}
+\newcolumntype{R}{>{\raggedleft}m}
+\newcolumntype{C}{>{\centering}m}
+
+\nc{\dline}{\hline \hline}
+\nc{\colline}[1]{\arrayrulecolor{#1} \hline}
+\nc{\coldline}[1]{\arrayrulecolor{#1} \dline}
+
+% Standardtablle mit horizontalen Linien
+\nc{\tab}[5][tbh]{\begin{table}[#1]\centering\caption{#4\label{tab:#5}}\begin{tabular}{#2}\hline #3 \\ \hline\end{tabular}\end{table}}
+%
+% farbige Tabelle
+\nc{\tabcolor}[6][tbh]{\arrayrulecolor{#6}\begin{table}[#1]\centering\caption{#4 \label {tab:#5}}\begin{tabular}{#2}\hline #3 \\\hline\end{tabular}\end{table}\arrayrulecolor{defaultcol}}
+%
+% Tabelle ohne Linien
+\nc{\tabol}[5][tbh]{\begin{table}[#1]\centering\caption{#4\label{tab:#5}}\begin{tabular}{#2} #3 \\ \end{tabular} \end{table}}
+%
+% Tabelle ohne Caption und Label
+\nc{\tabstern}[3][tbh]{\begin{table}[#1]\centering\begin{tabular}{#2}\hline #3 \\\hline\end{tabular}\end{table}}
+%
+% Buchtabelle (erfordert booktabs.sty)
+\nc{\tline}{\arrayrulecolor{greyf}\toprule[1.2pt]}
+\nc{\bline}{\arrayrulecolor{greyf}\bottomrule[1.2pt]}
+\nc{\mline}{\arrayrulecolor{greyf}\midrule[0.8pt]}
+\nc{\lline}{\arrayrulecolor{greyf}\midrule[0.5pt]}
+\nc{\tabbook}[5][tb]{\begin{table}[#1]\centering\caption{#4\label{tab:#5}}\begin{tabular}{#2}\tline #3 \\ \bline\end{tabular}\end{table}}
+%
+% Auswahl
+\rnc{\t}{\tabbook}
+%
+%---------------------------------------------------------------
+% Figures
+%---------------------------------------------------------------
+%
+% zentrierte Figure mit Bildunterschrift und Label
+\newcommand{\f}[3][tbh]{%
+ \begin{figure}[#1]
+ \centering
+ % \if@draft
+ %    \framebox[150mm]{\raisebox{0mm}[25mm][25mm]{\texttt{#2}}}
+ %\else
+  \includegraphics{\chaptersubdir/#2/#2}
+ %\fi
+ \caption{#3}
+ \label{fig:#2}
+\end{figure}
+}
+% zentrierte Figure ohne Bildunterschrift und Label
+\newcommand{\foc}[2][tbh]{%
+ \begin{figure}[#1]
+ \centering
+  \if@draft
+  \framebox[150mm]{\raisebox{0mm}[25mm][25mm]{\texttt{#2}}}
+ \else
+  \includegraphics{\chaptersubdir/#2/#2}
+ \fi
+ \label{fig:#2}
+\end{figure}
+}
+%
+% zentrierte Figure mit Bildunterschrift und Label und Skalierung
+\newcommand{\fs}[4][tbh]{%
+ \begin{figure}[#1]
+ \centering
+ \if@draft
+  \framebox[150mm]{\raisebox{0mm}[25mm][25mm]{\texttt{#2}}}
+ \else
+  \includegraphics[scale=#4]{\chaptersubdir/#2/#2}
+ \fi
+ \caption{#3}
+ \label{fig:#2}
+\end{figure}
+}
+%
+% zentrierte Figure in Tabelle oder auf Titelseite
+% ohne Bildunterschrift, ohne Label, mit Skalierung
+\newcommand{\ft}[2]{%
+ \centering
+ \if@draft
+  \framebox[150mm]{\raisebox{0mm}[25mm][25mm]{\texttt{#1}}}
+ \else
+  \includegraphics[scale=#2]{\chaptersubdir/#1/#1}
+ \fi
+ \label{fig:#1}
+}
+%
+% umflossene Bilder (erfordert package floatflt.sty)
+%\ifnum\checkfloatflt=1
+\newcommand{\ffloat}[4][p]{%
+ \begin{floatingfigure}[#1]{#2}
+ \centering
+ \if@draft
+  \framebox[150mm]{\raisebox{0mm}[25mm][25mm]{\texttt{#3}}}
+ \else
+  \includegraphics{\chaptersubdir/#3/#3}
+ \fi
+ \caption{#4}
+ \label{fig:#3}
+ \end{floatingfigure}
+}
+%\else
+%\typeout{befehle.tex Warning: Package ffloat.sty not loaded!}
+%\fi
+%
+% Zwei getrennte Figures nebeneinander
+% Was ist mit Subplot?
+%
+\newcommand{\mf}[7][tb]{%
+ \begin{figure}[#1]
+ \centering
+   \hs{.02\textwidth}
+   \begin{minipage}{#2\textwidth}
+     \centering
+       \if@draft
+         \framebox[150mm]{\raisebox{0mm}[25mm][25mm]{\texttt{#4}}}
+       \else
+         \includegraphics{\chaptersubdir/#4/#4}
+       \fi
+   \end{minipage}\hfill{}\hfill
+   \begin{minipage}{#3\textwidth}
+     \centering
+       \if@draft
+         \framebox[150mm]{\raisebox{0mm}[25mm][25mm]{\texttt{#5}}}
+       \else
+         \vs{#7}\includegraphics{\chaptersubdir/#5/#5}
+       \fi
+    \end{minipage}
+   \hs{.02\textwidth}
+   \caption{#6}
+   \label{fig:#4}
+ \end{figure}
+}
+%
+%---------------------------------------------------------------
+% abgesetzte Formeln
+%---------------------------------------------------------------
+% abgesetzte Formel mit Gleichungsnummer rechts
+\nc{\e}[2]{\begin{equation} #1 \label {eq:#2} \end{equation}}
+%
+% lange abgesetzte Formel mit Gleichungsnummer in nächster Zeile
+\nc{\el}[3][0.0ex]{\begin{samepage}
+\begin{displaymath} #2 \end{displaymath} \nopagebreak[4] \vs{#1} \nopagebreak[4]\vs{-2ex} \nopagebreak[4]
+\begin{equation} \label {eq:#3} \end{equation} \end{samepage}}
+%
+% abgesetzte Formel ohne Gleichungsnummer
+\nc{\es}[2]{\begin{displaymath} #1 \label {eq:#2} \end{displaymath}}
+%
+% abgesetztes Formel-Array
+\nc{\ea}[2]{
+\begin{eqnarray}
+%\setlength{\arraycolsep}{.2ex}
+#1 \label {eq:#2} \end{eqnarray}}
+%
+% abgesetztes Formel-Array mit Gleichungsnummer in nächster Zeile
+\nc{\eal}[3][0.0ex]{
+\begin{samepage}
+%\setlength{\arraycolsep}{.2ex}
+\begin{eqnarray*}
+#2
+\end{eqnarray*}
+\nopagebreak[4] \vs{#1} \nopagebreak[4]\vs{-2ex} \nopagebreak[4]
+\begin{eqnarray}
+\label {eq:#3}
+\end{eqnarray}
+\end{samepage}}
+%
+% abgesetztes Formel-Array ohne Gleichungsnummer
+\nc{\eas}[2]{\begin{eqnarray*} #1 \label {eq:#2} \end{eqnarray*}}
+%
+%---------------------------------------------------------------
+% Labels und Referenzen (deutsch/englisch)
+%---------------------------------------------------------------
+%
+\nc{\flab}[1]{\label{fig:#1}}
+\nc{\tlab}[1]{\label{tab:#1}}
+\nc{\elab}[1]{\label{eq:#1}}
+\nc{\slab}[1]{\label{sec:#1}}
+\nc{\alab}[1]{\label{asec:#1}}
+\nc{\clab}[1]{\label{ch:#1}}
+\nc{\plab}[1]{\label{page:#1}}
+\nc{\partlab}[1]{\label{part:#1}}
+%
+% Deutsch, wenn ngerman eingebunden ist (Prüfung erfordert eigenen check.sty);
+% sonst englisch
+%
+%\ifnum\checkngerman=1
+\nc{\fref}[2][]{{\bf Bild~\ref{fig:#2}{\bf #1}}}
+\nc{\frefo}[2][]{{\bf \ref{fig:#2}{\bf #1}}}
+\nc{\frefoo}[1]{{\bf #1}}
+\nc{\frefs}[2][]{{\bf Bildern~\ref{fig:#2}{\bf #1}}}
+% Tabellen
+\nc{\tref}[1]{{\bf Tabelle~\ref{tab:#1}}}
+\nc{\trefo}[1]{{\bf \ref{tab:#1}}}
+\nc{\trefs}[1]{{\bf Tabellen~\ref{tab:#1}}}
+% Gleichungen
+\nc{\eref}[1]{\x{Gl.~(\ref{eq:#1})}}
+\nc{\erefo}[1]{(\ref{eq:#1})}
+\nc{\erefs}[1]{\x{Gln.~(\ref{eq:#1})}}
+% Sections
+\nc{\sref}[1]{{Abschnitt~\ref{sec:#1}}}
+\nc{\srefo}[1]{\ref{sec:#1}}
+\nc{\srefs}[1]{{Abschnitten~\ref{sec:#1}}}
+% Sections im Anhang
+\nc{\aref}[1]{{Anhang~\ref{asec:#1}}}
+\nc{\arefo}[1]{\ref{asec:#1}}
+\nc{\arefs}[1]{{Anhängen~\ref{asec:#1}}}
+% Chapters
+\nc{\cref}[1]{{Kapitel~\ref{ch:#1}}}
+\nc{\crefo}[1]{\ref{ch:#1}}
+\nc{\crefs}[1]{{Kapiteln~\ref{ch:#1}}}
+% Pages
+\nc{\pref}[1]{{Seite~\pageref{page:#1}}}
+\nc{\prefo}[1]{\pageref{page:#1}}
+\nc{\prefs}[1]{{Seiten~\pageref{page:#1}}}
+% Parts (dies funktioniert noch nicht ?!)
+\nc{\partref}[1]{{Teil~\pageref{part:#1}}}
+\nc{\partrefo}[1]{\pageref{part:#1}}
+\nc{\partrefs}[1]{{Teilen~\pageref{part:#1}}}
+%
+%---------------------------------------------------------------
+% Anmerkungen am Seitenrand während des Schreibens (für fehlende Literatur usw.)
+%---------------------------------------------------------------
+\nc{\anm}[1]{\marginpar{\fbox{\parbox[b]{12mm}{\tiny #1}}}}
+\nc{\fanm}{\marginpar{\parbox[t]{11mm}{\rule[-2.5mm]{0mm}{0mm}}} \marginpar{\fbox{\parbox[b][][c]{12mm}{\centering \scriptsize F77/F90}}}}
+\nc{\fanmh}{\marginpar{\fbox{\parbox[b][][c]{11mm}{\centering \scriptsize F77/F90}}}}
+\nc{\chref}{\anm{Referenz?}}
+\nc{\su}{\anm{Lit. suchen!}}
+\nc{\chk}{\anm{Checken!}}
+\nc{\chverw}{\anm{Verweis?}}
+\nc{\kom}[1]{\texttt{[#1]}}
+%
+%---------------------------------------------------------------
+% Befehle zum Erstellen des Formelverzeichnisses
+%---------------------------------------------------------------
+\nc{\declare}[2]{\begin{tabular}{p{0.1\textwidth} p{0.87\textwidth}} $#1$ & #2\\ \end{tabular}}
+\nc{\declarer}[2]{\begin{tabular}{p{0.1\textwidth} p{0.87\textwidth}}  \mbox{{{\rightline{ $#1$  \rule{1ex}{0ex} }}}} & #2\\ \end{tabular}}
+%
+%---------------------------------------------------------------
+% Formeln im Text
+%---------------------------------------------------------------
+% Gleichung im Text; sollte statt $...$ immer verwendet werden wg. Zeilenumbruch!
+\nc{\g}[1]{\x{$#1$}}
+%
+% Größe mit Bezeichnung nicht umbrechen
+\nc{\gb}[2]{#1 \nolinebreak\g{#2}}
+%
+% Größe mit Bezeichnung nicht umbrechen
+\nc{\bg}[2]{$#1$ \nolinebreak #2}
+%
+%---------------------------------------------------------------
+% Größen mit Einheiten
+%---------------------------------------------------------------
+\nc{\geh}[2]{\x{${#1}~{\rm{[#2]}}$}}       % Größe mit Einheit nicht umbrechen
+\nc{\ze}[2]{\x{${#1}~{\rm{#2}}$}}       % Größe mit Einheit nicht umbrechen
+\nc{\gehg}[3]{\x{${#1}= #2 ~ {\rm{#3}}$}}       % Größe mit Einheit nicht umbrechen
+\nc{\axg}[2]{\mbox{${}\si{#2}{#1}$-Achse}} % Achse mit KOS-Index
+\nc{\lab}[3]{#1 \geh{#2}{#3}}
+%
+%---------------------------------------------------------------
+% Häufige benötigte Formelelemente
+%---------------------------------------------------------------
+\nc{\sstar}{{+\hs{-1.78ex}\times}}      % ?
+\nc{\sgn}{\mathrm{sgn}}                 % Signumfunktion
+\nc{\maxf}{\mathrm{max}}                % max nicht kursiv
+\nc{\minf}{\mathrm{min}}                % min nicht kursiv
+\nc{\const}{\mathrm{const}}             % mathematische Konstante
+\nc{\kli}{\hs{1ex}\ik}                  % ?
+\nc{\itj}{{\it j}}                      % kursvives j
+\nc{\iti}{{\it i}}                      % kursvives i
+\nc{\itk}{{\it k}}                      % kursvives k
+\nc{\itm}{{\it m}}                      % kursvives m
+\nc{\itn}{{\it n}}                      % kursvives n
+\nc{\bs}{\boldsymbol}                   % fette griechische Zeichen
+\nc{\gr}{\ensuremath{^{\circ}}}         % Gradzeichen
+\nc{\bm}{\boldmath}                     % fett
+\rnc{\u}[1]{~{\mathrm{#1}}}             % steile Einheit
+\nc{\intl}[2]{\int \limits_{#1}^{#2}}   % Integral mit Grenzen oben und unten
+\nc{\ointl}[2]{\oint \limits_{#1}^{#2}} % Ringintegral mit Grenzen oben und unten
+\nc{\suml}[2]{\sum \limits_{#1}^{#2}}   % Summe mit Indices oben und unten
+\nc{\vt}{({\mathit t})}                 % von t (t)
+\nc{\vtau}{(\tau)}                      % von tau (tau)
+\nc{\til}{\tilde}                       % Tilde
+\nc{\entspr}{~\widehat{=}~}             % 'entspricht'-Zeichen
+\nc{\ub}{\unboldmath}
+\nc{\bv}[2]{${}_{\rm  #1}\vec{\it e}_{\rm  #2}$}
+\nc{\ds}{\displaystyle}                 % normale Schriftgröße für reduzierte Symbole
+\nc{\sst}{\scriptstyle}                 % kleine Formeln
+\nc{\Rt}[1]{{\mathrm{Re}} \left\{ #1 \right\}  }            % Realteil
+\nc{\It}[1]{{\mathrm{Im}} \left\{ #1 \right\}  }            % Imaginärteil
+\nc{\mpk}{{\scriptstyle{}_{\textstyle -}\hs{-2.1ex {{}^{}}^{(+)} }}}
+\nc{\pmk}{{\scriptstyle{}_{\textstyle +}\hs{-2.1ex {{}^{}}^{(-)} }}}
+\nc{\gkk}{\stackrel{(<)}{>}}            % bes. <>-Zeichen
+\nc{\kgk}{\stackrel{(>)}{<}}            % bes. <>-Zeichen
+\nc{\mum}{\x{\textmu m}\xspace}                  % steiles \mu für Einheiten
+\nc{\hst}{\hs{-0.9ex} ^{*}}
+\nc{\hhst}{\hs{-0.9ex} ^{{}^{*}}}
+\nc{\hhhst}{\hs{-1.3ex} ^{{}^{*}\hs{.3ex}}}
+\nc{\updots}{\mbox{\reflectbox{$\ddots$}}}  % ddots aufwärts in Formel
+\nc{\diag}{\mbox{\bf diag}}             % Diagonalmatrix
+\nc{\bdiag}{\mbox{\bf bdiag}}           % Block-Diagonalmatrix
+\nc{\zirk}{\mbox{\bf circ}}             % zyklische Matrix
+\nc{\bzirk}{\mbox{\bf bcirc}}           % Bloc-zyklische Matrix
+\nc{\rz}{R\si{z}}                       % Rauheit
+\nc{\ax}[2]{{}\si{{#2}}{#1}}            % Achse mit Index
+\nc{\lk}{(\hs{1ex})}                    % leeres Klammerpaar
+\nc{\bed}[1]{                           % geschweifte Klammer mit Bedingungen
+\left\{
+\begin{array}{ll}
+#1
+\end{array}
+\right.}
+%
+%---------------------------------------------------------------
+% spezielle häufig benutzte Größen
+%---------------------------------------------------------------
+%\nc{\mhq}[4]{\m{\hat{\Phi \hs{-.3ex}}}{#1}{#2}{ #3}{#4}}
+\nc{\fc}{F\si{C}}
+\nc{\eip}{e^{\ii \, \Delta \phi}}
+\nc{\emip}{e^{-\ii\, \Delta \phi}}
+\nc{\om}[2]{\ubm{{}_{\hspace{.6ex} \rm #1}^{\rm #2}}{\omega}}
+\nc{\dotom}[2]{\ubm{{}_{\hspace{.6ex} \rm #1}^{\rm#2}}\dot{\omega}}
+\nc{\tildeom}[2]{\ubm{{}_{\hspace{.6ex} \rm #1}^{\rm #2}}\tilde{\omega}}
+\nc{\eo}{{\mathit{EO}}}
+\nc{\nd}{{\mathit{ND}}}
+\nc{\ome}{\Omega\si{E}}
+\nc{\omr}{\Omega\si{R}}
+\nc{\omp}{\Omega\si{P}}
+\nc{\omn}{\Omega\si{0}}
+\nc{\dphi}{\Delta \phi}
+\nc{\ns}{{\it n}\si{S}}
+\nc{\nkonp}{{\it n}\si{K, FEM}}
+\nc{\nh}{{\it n}\si{H}}
+\nc{\ndis}{{\it n}\si{Dis}}
+\nc{\nms}{{\it n}\si{M,S}}
+\nc{\nmd}{{\it n}\si{M,D}}
+\nc{\nfem}{{\it n}\si{FEM}}
+\nc{\nfhg}{{\it n}\si{FHG}}
+\nc{\nl}{{\it n}\si{L}}
+\nc{\nseg}{{\it n}\si{Seg}}
+\nc{\nm}{{\it n}\si{M}}
+\nc{\cnn}{c\si{N0}}
+\nc{\ctn}{c\si{T0}}
+\nc{\mopt}{m\si{Opt}}
+\nc{\ures}{\hat{u}\si{{\it x}, Res}}
+\nc{\fres}{f\si{E, Res}}
+\nc{\tp}{M\si{r}}
+\nc{\deltah}{\frac{\delta}{2}}
+\nc{\fur}{\mathrm{f"ur~}}
+\nc{\OL}{{\rm OL}}
+\nc{\OR}{{\rm OR}}
+\nc{\OLp}{{\rm OL}' }
+\nc{\ORp}{{\rm OR}' }
+\nc{\matdim}[3]{\g{[#1\times #2]}-#3}
+\nc{\matdims}[2]{\g{[#1\times #2]}}
+%
+%---------------------------------------------------------------
+% Abstände vor Satzzeichen nach und in Formeln
+%---------------------------------------------------------------
+\nc{\fabstand}{\,}
+\nc{\fp}{\fabstand.}
+\nc{\fk}{\fabstand,}
+\nc{\fsk}{\fabstand;}
+\nc{\fdp}{\fabstand:}
+%
+%---------------------------------------------------------------
+% spezielle mathematische Symbole (kalligraphisches M, D, K, H, S, F)
+%---------------------------------------------------------------
+\nc{\dsym}{\mm{\mathcal D}}
+\nc{\fsym}{\mm{\mathcal F}}
+\nc{\hsym}{\mm{\mathcal H}}
+\nc{\ksym}{\mm{\mathcal K}}
+\nc{\msym}{\mm{\mathcal M}}
+\nc{\ssym}{\mm{\mathcal S}}
+\nc{\hmsym}{\hat{\msym}}
+\nc{\hksym}{\hat{\ksym}}
+\nc{\hdsym}{\hat{\dsym}}
+\nc{\hhsym}{\hat{\hsym}}
+%
+%---------------------------------------------------------------
+% angepasste Klammern
+%---------------------------------------------------------------
+\nc{\la}{\left(}
+\nc{\ra}{\right)}
+\nc{\lb}{\left[}
+\nc{\rb}{\right]}
+\nc{\lc}{\left\{}
+\nc{\rc}{\right\}}
+\nc{\ld}{\left.}
+\nc{\rd}{\right.}
+\nc{\vr}{\rule{0mm}{2ex}}
+%
+%---------------------------------------------------------------
+% Ersetzen von phi, theta, rho und epsilon
+%---------------------------------------------------------------
+\rnc{\phi}{\varphi}
+\rnc{\theta}{\vartheta}
+\rnc{\rho}{\varrho}
+\rnc{\epsilon}{\varepsilon}
+%
+%---------------------------------------------------------------
+% steile mathematische Symbole
+%---------------------------------------------------------------
+\nc{\dd}{{\mathrm{d}}}
+\nc{\ii}{{\mathrm{i}}}
+\nc{\ee}{{\mathrm{e}}}
+%
+%---------------------------------------------------------------
+% inverse, transponierte und allgemeine Indices
+%---------------------------------------------------------------
+\nc{\inv}{^{-1}}                    % invers
+\nc{\tra}{^{\mathrm T}}                 % transponiert
+\nc{\herm}{^{\mathrm H}}                % hermitesch transponiert
+\nc{\stern}{^{*}}                      % Stern
+\nc{\stst}{^{**}}                   % Sternstern
+\nc{\si}[1]{_{\mathrm{#1}}}              % steiler tiefgestellter Index
+\nc{\ki}[1]{_{\mathit{#1}}}              % kursiver tiefgestellter Index
+%
+%---------------------------------------------------------------
+% kursiver hochgestellter Zählindex (i)
+%---------------------------------------------------------------
+\nc{\ik}{({\it i})}
+\nc{\jk}{({\it j})}
+\nc{\kk}{({\it k})}
+\nc{\nk}{{\it n}}
+\nc{\ikp}{({\it i}+1)}
+\nc{\ikm}{({\it i}-1)}
+\nc{\jkp}{({\it j}+1)}
+\nc{\jkm}{({\it j}-1)}
+\nc{\kkp}{({\it k}+1)}
+\nc{\kkm}{({\it k}-1)}
+\nc{\nkp}{({\it n}+1)}
+\nc{\nkm}{({\it n}-1)}
+\nc{\mkp}{({\it m}+1)}
+\nc{\mkm}{({\it m}-1)}
+%
+%---------------------------------------------------------------
+% Matrizen und Vektoren
+%---------------------------------------------------------------
+\rnc{\matrix}[2]{\left[\!\!\begin{array}{#1} #2\end{array}\!\!\right]}
+\rnc{\vector}[1]{\matrix{c}{#1}}
+%---------------------------------------------------------------
+%
+% Matrix und Vektor fett kursiv
+\nc{\mm}[1]{\boldsymbol{#1}}
+% Matrix und Vektor fett steil
+%\nc{\mm}[1]{\mathbf{#1}}
+%
+% Vektoren und Matrizen ohne Index fett kursiv
+\nc{\m}[5]{{}_{\mathrm{#2}}^{\mathrm{#3}}{\mm{#1}}^{\mathrm{#4}}_{\mathrm{#5}}}
+%
+% Vektoren und Matrizen mit Index fett steil
+%\nc{\m}[5]{{}_{\mathrm{#2}}^{\mathrm{#3}}{\mathbf{#1}}^{\mathrm{#4}}_{\mathrm{#5}}}
+%
+%
+%\nc{\mm}[1]{\boldmath{#1}} % Vektoren und Matrizen ohne Index fett kursiv
+%
+%\nc{\mm}[1]{\mathbf{#1}} % Vektoren und Matrizen ohne Index fett steil
+%
+% Besondere Matrizen:
+\nc{\mnull}{\mm{0}}
+\nc{\mma}{\mm{A}}
+\nc{\mmb}{\mm{B}}
+\nc{\mmc}{\mm{C}}
+\nc{\mmd}{\mm{D}}
+\nc{\mme}{\mm{E}}
+\nc{\mmf}{\mm{F}}
+\nc{\mmg}{\mm{G}}
+\nc{\mmh}{\mm{H}}
+\nc{\mmi}{\mm{I}}
+\nc{\mmj}{\mm{J}}
+\nc{\mmk}{\mm{K}}
+\nc{\mml}{\mm{L}}
+\nc{\mmm}{\mm{M}}
+\nc{\mmn}{\mm{N}}
+\nc{\mmo}{\mm{O}}
+\nc{\mmp}{\mm{P}}
+\nc{\mmq}{\mm{Q}}
+\nc{\mmr}{\mm{R}}
+\nc{\mms}{\mm{S}}
+\nc{\mmt}{\mm{T}}
+\nc{\mmu}{\mm{U}}
+\nc{\mmv}{\mm{V}}
+\nc{\mmw}{\mm{W}}
+\nc{\mmx}{\mm{X}}
+\nc{\mmy}{\mm{Y}}
+\nc{\mmz}{\mm{Z}}
+%
+\nc{\mphi}{\mm{\phi}}
+\nc{\mtildephi}{\mm{\tilde{\phi}}}
+\nc{\mpsi}{\mm{\psi}}
+\nc{\mhatphi}{\mm{\hat \phi}}
+\nc{\mhatpsi}{\mm{\hat \psi}}
+\nc{\mtildepsi}{\mm{\tilde \psi}}
+\nc{\hq}{\hat q}
+\nc{\mhq}{\mm{\hat q}}
+%
+\nc{\skao}[1]{#1}           % Definition eines Skalars ohne Indices
+\nc{\skai}[5]{{}_{\rm  #2}^{\rm #3}{#1}^{\rm #4}_{\rm  #5}}   % Definition eines Skalars mit Indices
+\nc{\veco}[1]{\vec{#1}}     % Definition eines Vektors mit Vektorpfeil ohne Indices
+\nc{\veci}[5]{{}_{\rm  #2}^{\rm #3}{\vec{#1}}^{\rm #4}_{\rm  #5}} % Definition eines Vektors mit Vektorpfeil mit Indices
+\nc{\vectupo}[1]{\vec{\bf{#1}}}
+\nc{\vectupi}[5]{{}_{\rm  #2}^{\rm #3}{\vec{\bf{#1}}}^{\rm #4}_{\rm#5}}
+%
+%---------------------------------------------------------------
+% trigon. Funktionen
+%---------------------------------------------------------------
+\nc{\calpha}{\cos \alpha}
+\nc{\salpha}{\sin \alpha}
+\nc{\talpha}{\tan \alpha}
+\nc{\cbeta}{\cos \beta}
+\nc{\sbeta}{\sin \beta}
+\nc{\tbeta}{\tan \beta}
+\nc{\cgamma}{\cos \gamma}
+\nc{\sgamma}{\sin \gamma}
+\nc{\tgamma}{\tan \gamma}
+\nc{\cdelta}{\cos \delta}
+\nc{\sdelta}{\sin \delta}
+\nc{\tdelta}{\tan \delta}
+\nc{\ctheta}{\cos \theta}
+\nc{\stheta}{\sin \theta}
+\nc{\ttheta}{\tan \theta}
+\nc{\sphi}{\sin \phi}
+\nc{\cphi}{\cos \phi}
+\nc{\tphi}{\tan \phi}
+\nc{\spsi}{\sin \psi}
+\nc{\cpsi}{\cos \psi}
+\nc{\tpsi}{\tan \psi}
+%
+%---------------------------------------------------------------
+% Blankzeichen
+%---------------------------------------------------------------
+%\nc{\bl}{\hs{-1.4ex}\raisebox{-0.9ex}{\resizebox{1.3ex}{1ex}{\rotatebox{90}{[}}}\hs{-1.3ex}}
+\nc{\bl}{\textvisiblespace} % funktioniert nur ohne T1 encoding richtig!
+%
+%---------------------------------------------------------------
+% Ersetzungen durch psfrag
+% Sollte nicht mehr im Dokument verwendet werden, sondern schon bei
+% der Erzeugung des Bildes!
+%---------------------------------------------------------------
+%\nc{\p}[1]{\psfrag{#1}[c][c]{\figfont #1}}
+%\nc{\pf}[2]{\psfrag{#1}[c][c]{\figfont #2}}
+%
+%---------------------------------------------------------------
+% spezielle 'Verschönerungen', schriftabhängig
+%---------------------------------------------------------------
+%
+\nc{\hfsym}{\hat{\fsym\hs{0.5ex}}\hs{-.5ex}}
+\nc{\hssym}{\hat{\ssym\hs{0.5ex}}\hs{-.5ex}}
+\nc{\mPhi}[4]{\m{\Phi}{#1}{#2}{\hs{-.4ex} #3}{\hs{-.5ex} #4}}
+\nc{\mDeltaPhi}[4]{\m{\Delta \Phi}{#1}{#2}{\hs{-.4ex} #3}{\hs{-.5ex} #4}}
+\nc{\mPsi}[4]{\m{\Psi}{#1}{#2}{\hs{0ex} #3}{\hs{0ex} #4}}
+\nc{\mtildePhi}[4]{\m{\tilde{\Phi \hs{-.3ex}}}{#1}{#2}{ #3}{#4}}
+\nc{\mhatPhi}[4]{\m{\hat{\Phi \hs{-.3ex}}}{#1}{#2}{ #3}{#4}}
+\nc{\mtildePsi}[4]{\m{\tilde{\Psi \hs{0ex}}}{#1}{#2}{ #3}{#4}}
+\nc{\mhatPsi}[4]{\m{\hat{\Psi \hs{.2ex}}}{\hs{-.2ex} #1}{\hs{-.2ex} #2}{\hs{-.2ex} #3}{\hs{-.2ex} #4}}
+%
+%---------------------------------------------------------------
+% Sections usw. automatisch mit label versehen
+%---------------------------------------------------------------
+\nc{\partl}[2]{\part{#1 \partlab{#2}}}
+\nc{\chapterl}[2]{\chapter{#1 \clab{#2}}}
+\nc{\sectionl}[2]{\section{#1 \slab{#2}}}
+\nc{\subsectionl}[2]{\subsection{#1 \slab{#2}}}
+\nc{\subsubsectionl}[2]{\subsubsection{#1 \slab{#2}}}
+%
+\nc{\partls}[3]{\part[#1]{#2 \partlab{#3}}}
+\nc{\chapterls}[3]{\chapter[#1]{#2 \clab{#3}}}
+\nc{\sectionls}[3]{\section[#1]{#2 \slab{#3}}}
+\nc{\subsectionls}[3]{\subsection[#1]{#2 \slab{#3}}}
+\nc{\subsubsectionls}[3]{\subsubsection[#1]{#2 \slab{#3}}}
+%
+\nc{\ch}[2]{\chapter{#1 \clab{#2}} \thispagestyle{kapitelbeginn}}
+\nc{\cha}[2]{\chaptera{#1 \alab{#2}}}
+%\nc{\cha}[2]{\chapter{#1 \alab{#2}} \markright{\headertextfont Anhang}}
+%\nc{\cha}[2]{\chapter{#1 \alab{#2}} \markright{\headertextfont Anhang} \thispagestyle{kapitelbeginn}}
+\nc{\sect}[2]{\section{#1 \slab{#2}}}
+\nc{\ssect}[2]{\subsection{#1 \slab{#2}}}
+\nc{\sssect}[2]{\subsubsection{#1 \slab{#2}}}
+\nc{\chs}[2]{\chapter*{#1 \clab{#2}} \thispagestyle{kapitelbeginn}}
+%
+%---------------------------------------------------------------
+% Aufzählungen usw.
+%---------------------------------------------------------------
+\nc{\bitemize}{\begin{itemize}}
+\nc{\eitemize}{\end{itemize}}
+\rnc{\labelitemi}{$\bullet$}
+\rnc{\labelitemii}{$\circ$}
+%
+\nc{\benumerate}{\begin{enumerate}}
+\nc{\eenumerate}{\end{enumerate}}
+\nc{\barray}{\begin{array}}
+\nc{\earray}{\end{array}}
+\nc{\bsamepage}{\begin{samepage}}
+\nc{\esamepage}{\end{samepage}}
+%---------------------------------------------------------------
+% Weitere Abkürzungen
+%---------------------------------------------------------------
+\nc{\ols}{$\x{OL}'$}
+\nc{\ors}{$\x{OR}'$}
+%
+%---------------------------------------------------------------
+% Fußnoten
+%---------------------------------------------------------------
+%
+\nc{\fnote}[1]{\footnote{\samepage #1}} % Fußnoten nicht umbrechen!
+\nc{\fnotetext}[1]{\footnotetext{\samepage #1}} % Fußnoten nicht umbrechen!
+%(Dies führt u.U. zu seltsamen Formatierungen, checken! -> umgebrochene Fußnoten sehen aber richtig schlimm aus!)
+%
+%---------------------------------------------------------------
+% Indexerstellung
+%---------------------------------------------------------------
+% Übernehmen von Indexeinträgen aus dem Text - Originalbefehl \index{}
+\nc{\ind}[1]{#1\index{#1}}                  % Index direkt aus Text anlegen
+\nc{\indsub}[3][]{#2\index{#3!#2#1}}        % Subindex im Text anlegen (mit optionaler Endung)
+\nc{\indsubsub}[4][]{#2\index{#3!#4!#2#1}}  % Subsubindex im Text anlegen (mit optionaler Endung)
+%
+%---------------------------------------------------------------
+% Farbdefinition
+% Erfordert package color.sty oder colortbl.sty
+%---------------------------------------------------------------
+%\ifnum\checkcolor=1
+\definecolor{red}{rgb}{1.0,0.0,0.0}
+\definecolor{green}{rgb}{0.0,1.0,0.0}
+\definecolor{blue}{rgb}{0.0,0.0,1.0}
+\definecolor{black}{rgb}{0.0,0.0,0.0}
+\definecolor{white}{rgb}{1.0,1.0,1.0}
+\definecolor{yellow}{rgb}{1.0,1.0,0.0}
+\definecolor{orange}{rgb}{1.0,0.4,0.0}
+\definecolor{purple}{rgb}{0.6,0.3,0.5}
+\definecolor{cyan}{rgb}{0.0,1.0,1.0}
+\definecolor{magenta}{rgb}{1.0,0.0,1.0}
+\definecolor{greyi}{rgb}{0.9,0.9,0.9}
+\definecolor{greyh}{rgb}{0.8,0.8,0.8}
+\definecolor{greyg}{rgb}{0.7,0.7,0.7}
+\definecolor{greyf}{rgb}{0.6,0.6,0.6}
+\definecolor{greye}{rgb}{0.5,0.5,0.5}
+\definecolor{greyd}{rgb}{0.4,0.4,0.4}
+\definecolor{greyc}{rgb}{0.3,0.3,0.3}
+\definecolor{greyb}{rgb}{0.2,0.2,0.2}
+\definecolor{greya}{rgb}{0.1,0.1,0.1}
+\definecolor{defaultcol}{rgb}{0.0,0.0,0.0}
+\nc{\red}[1]{\textcolor{red}{#1}}
+\nc{\blue}[1]{\textcolor{blue}{#1}}
+\nc{\green}[1]{\textcolor{green}{#1}}
+\nc{\yellow}[1]{\textcolor{yellow}{#1}}
+\nc{\black}[1]{\textcolor{black}{#1}}
+\nc{\white}[1]{\textcolor{white}{#1}}
+\nc{\violet}[1]{\textcolor{purple}{#1}}
+\nc{\orange}[1]{\textcolor{orange}{#1}}
+\nc{\cyan}[1]{\textcolor{cyan}{#1}}
+\nc{\magenta}[1]{\textcolor{magenta}{#1}}
+\nc{\greya}[1]{\textcolor{greya}{#1}}%
+\nc{\greyb}[1]{\textcolor{greyb}{#1}}
+\nc{\greyc}[1]{\textcolor{greyc}{#1}}
+\nc{\greyd}[1]{\textcolor{greyd}{#1}}
+\nc{\greye}[1]{\textcolor{greye}{#1}}
+\nc{\greyf}[1]{\textcolor{greyf}{#1}}
+\nc{\greyg}[1]{\textcolor{greyg}{#1}}
+\nc{\greyh}[1]{\textcolor{greyh}{#1}}
+\nc{\greyi}[1]{\textcolor{greyi}{#1}}
+%\else
+%\typeout{befehle.tex Warning: Package color.sty not loaded!}
+%\fi
+%------------------------------------------------------------
+\nc{\musteil}{\textmu\xspace}

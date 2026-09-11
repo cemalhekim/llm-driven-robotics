@@ -1,0 +1,94 @@
+%%%%%%%%%%%%%%%%%%%%%%%% CUT HERE %%%%%%%%%%%%%%%%%%%%%%
+%
+%  This is  Eqmark.Sty  (Version 2.0  93/12/10)
+%
+%  Dirk Nitschke
+%  Semperstr. 41
+%
+%  D-22303 Hamburg
+%
+%  e-mail: nietschke@math.uni-hamburg.de
+%
+
+%
+%  Die neuen Befehle
+%   \rmark#1
+%   \lmark#1
+%  ermoeglichen es, in einer Formel mit Nummerierung, also
+%  z.\,B. in einer \equation oder einem \eqnarray, anstelle
+%  der Formelnummer einen beliebigen Text auszugeben, der im
+%  Mathematik-Modus (im Textstyle) ausgegeben wird.
+%
+%  Mit  \rmark{FOO}  erhaelt man den Text  FOO  am rechten Rand,
+%  mit  \lmark{FOO}  erhaelt man den Text  FOO  am linken Rand.
+%
+%  Die automatische Formelnummerierung wird hierdurch nicht gestoert.
+%  Jedoch lassen sich die mit  \rmark  oder  \lmark  gesetzten Texte
+%  nicht referieren, wie dies sonst bei den normalen Formelnummern
+%  moeglich ist.
+%
+%  Will man die Stiloption  leqno  verwenden, so MUSS  leqno  VOR
+%  diesem Style angegeben werden! Macht man dies nicht, so sind
+%  zwar die Befehle  \rmark  und  \lmark  verwendbar, jedoch bekommt
+%  man nicht das, was man bestellt hat, denn alle Formelnummern
+%  landen auf der linken Seite, die gewuenschten Markierungen bleiben
+%  jedoch verborgen. Benutzt man in einer Formelzeile die beiden Befehle
+%  \lmark  UND  \rmark , so liefert der Output die gewuenschten Texte
+%  links UND rechts.
+%
+%  Dieser Style funktioniert auch in Verbindung mit der Option  fleqn .
+%  Jedoch beachte man, dass die Verwendung von  \lmark  leicht zu
+%  Ueberschneidungen von Formel und dem am linken Rand erscheinenden
+%  Text kommen kann. Dies kann natuerlich auch ohne die Option  fleqn
+%  geschehen.
+%
+%  Die Verwendung von  \lmark  und  \rmark  in Verbindung mit  \nonumber
+%  ist zu vermeiden. Sie fuehrt dazu, dass in der naechsten Zeile, die
+%  mit einer Formelnummer versehen werden soll, der Text links bzw.\
+%  rechts erscheint, den man eigentlich in der vorherigen Zeile anstelle
+%  einer Formelnummer plazieren wollte. Hat man in dieser naechsten Zeile
+%  eine neu Markierung durch  \lmark  oder  \rmark  definiert, so erhaelt
+%  man diese und die Markierung der vorherigen Zeile ist verloren gegangen.
+%
+\@ifundefined{rmark}{}{\endinput} % Falls schon bekannt abbrechen
+\def\fileversion{2.0}
+\def\filedate{10 Dec 1993}
+\typeout{Style Option `eqmark'  Version\space\fileversion\space<\filedate> (DN)}
+
+\let\@qnnum\@eqnnum  % Alte Definition retten (so weiss man, ob Nummern
+                     % standardmaessig links oder rechts sind)
+\newif\ifstdeqn      % Neues if: Will man Standardnummerierung?
+\stdeqntrue          % Zunaechst JA
+\newif\ifrtext       % Neues if: Gibt es Text fuer rechts?
+\newif\ifltext       % Neues if: Gibt es Text fuer links?
+\def\rmark#1{\global\rtexttrue% Ja, Text fuer rechts
+             \global\stdeqnfalse% Nein, keine Standardnummer
+             \global\def\rtext{#1}% und der steht jetzt in \rtext
+}
+\def\lmark#1{\global\ltexttrue% Ja, Text fuer links
+             \global\stdeqnfalse% Nein, keine Standardnummer
+             \global\def\ltext{#1}% und der steht jetzt in \ltext
+}
+\def\@eqnnum{%
+ \ifstdeqn%                     %wenn Standardnummerierung (meistens)
+  \@qnnum%                      %dann geretteter Befehl
+ \else%                         %wenn nicht:
+  \hbox to .01\p@{}%            %zunaechst die kleine Box
+  \addtocounter{equation}{-1}   %damit Zaehlung weiter richtig
+  \ifrtext%                     %wenn Text fuer rechts:
+   \llap{$\rtext$}%             %Ausgabe wie Standardnummer rechts
+   \global\rtextfalse%          %nein, kein weiterer Text rechts
+   \global\stdeqntrue%          %wieder Standard
+  \fi%                          %end of \ifrtext
+  \ifltext%                     %wenn Text fuer links:
+   \rlap{\hskip-\displaywidth%  %Ausgabe wie Standardnummer links
+         $\ltext$}%             %(vgl.\ leqno.sty)
+   \global\ltextfalse%          %nein, kein weiterer Text links
+   \global\stdeqntrue%          %wieder Standard
+  \fi%                          %end of \ifltext
+ \fi%                           %end of \ifstdeqn
+}
+\endinput
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% end of  eqmark.sty
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

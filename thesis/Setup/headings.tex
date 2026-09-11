@@ -1,0 +1,38 @@
+\setlength{\headheight}{16pt}
+\renewcommand{\headertextfont}{\small \scshape \rmfamily \let\uppercase\relax}
+\renewcommand{\headerpagefont}{\normalsize \scshape \rmfamily \let\uppercase\relax}
+%
+% [..] linke Seite; {..} rechte Seite
+
+\fancypagestyle{mypagestyle}{
+\lhead[\nouppercase{\headerpagefont} \thepage]{\headertextfont \nouppercase{\rightmark}}
+\rhead[\headertextfont \nouppercase{\leftmark}]{\nouppercase{\headerpagefont} \thepage}
+\chead[]{}
+\lfoot[]{}
+\rfoot[]{}
+\cfoot[]{}
+\renewcommand{\headrulewidth}{.4pt}
+\renewcommand{\footrulewidth}{0pt}}
+ 
+\fancypagestyle{kapitelsolo}{
+\lhead[\nouppercase{\headerpagefont} \thepage]{\headertextfont \nouppercase{\leftmark}}
+\rhead[\headertextfont \nouppercase{\leftmark}]{\nouppercase{\headerpagefont} \thepage}
+\chead[]{}
+\lfoot[]{}
+\rfoot[]{}
+\cfoot[]{}
+\renewcommand{\headrulewidth}{.4pt}
+\renewcommand{\footrulewidth}{0pt}}
+
+\fancypagestyle{kapitelbeginn}{
+\lhead[\nouppercase{\headerpagefont} \thepage]{}
+\rhead[]{\nouppercase{\headerpagefont} \thepage}
+\chead[]{}
+\lfoot[]{}
+\rfoot[]{}
+\cfoot[]{}
+\renewcommand{\headrulewidth}{.4pt}
+\renewcommand{\footrulewidth}{0pt}
+}
+
+\pagestyle{mypagestyle}

@@ -1,0 +1,46 @@
+%---------------------------------------------------------------
+\documentclass[ma]{Styles/Dokument/iat}
+%---------------------------------------------------------------
+
+\input{Setup/header}                % Definition der Dokumentdaten
+\input{Setup/packages}              % Einbinden der Packages
+\input{Setup/hypersetup}            % Definition der Hyperrefs für PdfLaTeX
+\input{Setup/headings}              % Definition der Kopf- und Fußzeilen
+%\input{Setup/trennung}              % Festlegen der Trennhilfen
+\input{Setup/befehle}               % als letztes: Einbinden eigener Befehle
+%---------------------------------------------------------------
+\begin{document}
+%---------------------------------------------------------------
+\maketitle                          % Einfügen der Titelseite
+%---------------------------------------------------------------
+\frontmatter
+%---------------------------------------------------------------
+%c\includefile{Prolog}{vorwort}        % Einfügen des Vorworts
+%\includefile{Prolog}{widmung}        % Einfügen der Widmung
+\includefile{Prolog}{abstract}       % Einfügen des Abstracts
+\includefile{Prolog}{zusammenfassung}       % Einfügen des Abstracts
+\includefile{Prolog}{toc}            % Einfügen des Inaltsverzeichnisses
+\includefile{Prolog}{lof}    
+\includefile{Prolog}{lot}   
+%\includefile{Prolog}{lol}            
+\includefile{Prolog}{formelzeichen}  % Einfügen des Formelverzeichnisses
+%\includefile{Prolog}{kurzfassung}    % Einfügen der Kurfassung
+
+%---------------------------------------------------------------
+\mainmatter
+%---------------------------------------------------------------
+\includefile{Kapitel_1}{kapitel_1}   % Einfügen eines neuen Kapitels
+\includefile{Kapitel_2}{kapitel_2}   % Einfügen eines neuen Kapitels
+\includefile{Kapitel_3}{kapitel_3}   % Einfügen eines neuen Kapitels
+\includefile{Kapitel_4}{kapitel_4}   % Einfügen eines neuen Kapitels
+\includefile{Kapitel_5}{kapitel_5}
+\includefile{Kapitel_6}{kapitel_6}
+%---------------------------------------------------------------
+\backmatter
+%---------------------------------------------------------------
+\includefile{Epilog}{anhang}         % Einfügen des Anhangs
+\includefile{Epilog}{references}     % Einfügen des Literaturverzeichnisses
+% \includefile{Epilog}{lebenslauf}     % Einfügen des Lebenslaufs
+%---------------------------------------------------------------
+\end{document}
+%---------------------------------------------------------------
